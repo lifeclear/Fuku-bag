@@ -1,0 +1,36 @@
+<form bindsubmit="addaddress">
+
+
+<view class="message" style="width: 736rpx; height: 538rpx; display: block; box-sizing: border-box; left: 8rpx; top: 0rpx; position: relative">
+<view class="name" style="position: relative; left: 16rpx; top: 134rpx; width: 694rpx; height: 72rpx; display: block; box-sizing: border-box">
+    <view class="nnme" style="position: relative; left: 0rpx; top: 0rpx; width: 136rpx; height: 72rpx; display: block; box-sizing: border-box">
+    电话:
+    <view class="view-contain-ti" style="position: relative; left: 136rpx; top: -66rpx; width: 556rpx; height: 72rpx; display: block; box-sizing: border-box">
+    <input name="phone" class="input1" style="width: 554rpx; height: 72rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 0rpx"></input>
+</view>
+    </view>
+</view>
+
+
+<view class="name" style="position: relative; left: 16rpx; top: -34rpx; width: 694rpx; height: 72rpx; display: block; box-sizing: border-box">
+    <view class="nnme" style="position: relative; left: 0rpx; top: 0rpx; width: 136rpx; height: 72rpx; display: block; box-sizing: border-box">
+    姓名:
+    <view class="view-contain-ti" style="position: relative; left: 136rpx; top: -66rpx; width: 556rpx; height: 72rpx; display: block; box-sizing: border-box">
+    <input name="name" class="input1" style="width: 554rpx; height: 72rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 0rpx"></input>
+</view>
+    </view>
+</view>
+<view class="name" style="position: relative; left: 16rpx; top: 88rpx; width: 694rpx; height: 254rpx; display: block; box-sizing: border-box"></view>
+<view class="nnme" style="position: relative; left: 16rpx; top: -164rpx; width: 226rpx; height: 72rpx; display: block; box-sizing: border-box">
+    详细地址:
+    <view class="view-contain-ti" style="position: relative; left: 226rpx; top: -66rpx; width: 468rpx; height: 256rpx; display: block; box-sizing: border-box">
+    <input name="address" class="input1" style="width: 468rpx; height: 254rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 0rpx;"></input>
+</view>
+    </view>
+
+
+</view>
+<button form-type="submit" style="position: relative; left: 1rpx; top: 520rpx">添加地址</button>
+</form>
+
+

@@ -1,0 +1,31 @@
+<!--搜索框-->
+<view class="box">
+  <view class="cu-bar search bg-pinkLight">
+    <view class="search-form round ">
+      <text class="cuIcon-search "></text>
+      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+    </view>
+    <!--搜索按钮-->
+    <view class="action">
+      <button style="width: 120rpx;" class="cu-btn bg-white shadow-blur round">搜索</button>
+    </view>
+  </view>
+  </view>
+  <!--投票框-->
+<view class="padding" wx:for="{{vote_list}}" wx:for-item="vote" >
+<view catchtap="onVoteDetail" data-id="{{vote.id}}"class="table  flex  margin-bottom:10rpx " style="background:#ffe1e1 " >
+    <view><!--头像-->
+      <image class="photo" src="../../../images/36.jpg"></image>
+    </view>
+    <view class="margin-left-sm "><!--昵称和标题-->
+      <text style="white-space:pre-wrap" class="word1">Lin</text>
+      <view class="word2">{{vote.title}}</view>
+    </view>
+  </view>
+
+
+
+
+ 
+
+</view>

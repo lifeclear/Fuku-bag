@@ -1,0 +1,113 @@
+.sp{
+    height: 100rpx;
+  }
+  .spm{
+    font-size: 70rpx;
+    margin-left: 30rpx;
+    margin-top: 35rpx;
+  }
+
+  .img_box{
+    display: flex;
+    flex-wrap: wrap;
+    position:relative;
+  }
+  .imgs{
+    width: 210rpx;
+    height: 210rpx;
+    border: 1rpx solid rgb(196, 196, 196);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+  }
+  .img{
+    position: relative;
+    margin-left: 10%;
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    font-size: larger;
+  }
+
+  .price{
+    display: flex;
+  }
+  .newmoney {
+    padding: 15rpx;
+    font-size: 80rpx;
+    font-weight: 600;
+    color: red;
+    
+  }
+  .oldmoney {
+    margin-left: 50rpx;
+    font-size: 40rpx;
+    color: #aaa;
+    text-decoration: line-through;
+    margin-top: 52rpx;
+  }
+  .type {
+    margin-left: 250rpx;
+    font-size: 40rpx;
+    margin-top: 52rpx;
+  }
+  .k{
+    height: 100rpx;
+  }
+  .kk{
+    font-size: 40rpx;
+    margin-left: 30rpx;
+    margin-top: 35rpx;
+  }
+
+  .btm_tool {
+    border-top: 1rpx solid #ccc;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    display: flex;
+  }
+  .btm_tool .tool_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24rpx;
+    position: relative;
+  }
+  .btm_tool .tool_item button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  .btm_tool .btn_cart {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffa500;
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: 600;
+  }
+  .btm_tool .btn_buy {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eb4450;
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: 600;
+  }

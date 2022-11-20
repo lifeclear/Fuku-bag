@@ -1,0 +1,14 @@
+.message{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(184, 144, 223);
+}
+.name{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(182, 223, 144);
+}
+.nnme{
+    background-color: burlywood;
+font-size: 25px;
+}

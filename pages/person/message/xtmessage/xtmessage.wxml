@@ -1,0 +1,35 @@
+<view class="flex-container">
+        <view class="UserHeadImage">
+            <image src="../../setting/1.jpeg"></image>
+        </view>
+        <view class="UserName" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: -38rpx; position: relative; top: 1rpx">
+            <view class="user-name" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative">购买了你的闲置</view>
+        </view>
+    </view>
+    <view class="flex-container">
+        <view class="UserHeadImage">
+            <image src="../../setting/1.jpeg"></image>
+        </view>
+        <view class="UserName" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: -38rpx; position: relative; top: 1rpx">
+            <view class="user-name" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative">投票消息
+            </view>
+        </view>
+    </view>
+    <view class="flex-container">
+        <view class="UserHeadImage">
+            <image src="../../setting/1.jpeg"></image>
+        </view>
+        <view class="UserName" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: -38rpx; position: relative; top: 1rpx">
+            <view class="user-name" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative">交易消息
+            </view>
+        </view>
+    </view>
+    <view class="flex-container">
+        <view class="UserHeadImage">
+            <image src="../../setting/1.jpeg"></image>
+        </view>
+        <view class="UserName" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: -38rpx; position: relative; top: 1rpx">
+            <view class="user-name" style="width: 574rpx; height: 140rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative">悬赏消息
+            </view>
+        </view>
+    </view>

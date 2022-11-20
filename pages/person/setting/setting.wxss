@@ -1,0 +1,53 @@
+/* pages/setting/setting.wxss */
+.hz{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50rpx;
+    margin-left: 35rpx;
+}
+.Trans {
+    display: flex;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+.HI{
+    position: relative; 
+    left: 546rpx; 
+    top: 0rpx;
+    width: 30px;
+    height: 30px;
+background-color: rgb(172, 99, 99);
+border-radius: 65rpx;
+}
+.view-contain-ti {
+    display: flex;
+    height: 20px;
+    border: 3rpx solid #faca82;
+    border-radius: 10rpx;
+  }
+  .xx{
+    display: flex;
+    height: 20px;
+    border: 3rpx solid #faca82;
+    border-radius: 10rpx;
+  }
+
+.font30{
+    font-size: 30rpx;
+  }
+  
+  .color3{
+    color: #333;
+  }
+  
+  .color6{
+    color: #666;
+  }
+  
+  .timeIcon{
+    color:#666;
+    font-size:18rpx;
+    margin-left: 5rpx;
+  }
+  
+  

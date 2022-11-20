@@ -1,0 +1,73 @@
+<form bindsubmit="post">
+
+  <view class="A1">        <!--第一栏-->
+    <view class="A1-1">     
+      <text class="kk">*</text>     <!--kk：必填*-->
+      <text class="smp">商品名</text>      <!--spm:商品名-->
+      <textarea name="Tradename" cols="30" rows="3" placeholder="请输入商品名" class="tradename" value="{{spmc}}"
+    maxlength="30"></textarea>      <!--tradename:输入框中的信息-->
+    </view>
+  </view>
+
+  <view class="A2">     <!--第二栏-->
+    <view class="A2-1">
+      <text class="kk">*</text>     <!--必填*-->
+      <text class="smp1">详细介绍</text>    <!--smp1:详细介绍-->
+      <textarea name="Tradename1" cols="30" rows="3" placeholder="请输入商品详细介绍" class="tradename"
+    maxlength="200" value="{{xxjs}}"></textarea>  
+    </view>
+  </view>
+
+  <view class="A3">     <!--第三栏-->
+    <view class="A3-1">
+      <text class="kk">*</text>
+      <text class="A3-2">类型</text>       <!--类型-->
+      <textarea name="Tradename2" cols="30" rows="3" placeholder="类型" class="tradename1" value="{{lx}}"
+      maxlength="10"></textarea>    <!--类型的输入框-->
+    </view>
+  </view>
+
+
+
+  <view class="A5">     <!--第四栏-->
+  <view class="A5plus">
+    <text class="A5-1">预售价格</text>  <!--预售价格-->
+      <button class="A5-2" size="mini" bindtap="xianjiajian">-</button>     <!--减号按钮-->
+      <input  name="xj"  type="text" class="A5-3" placeholder="{{xianjia}}" value="{{xj}}"/>    <!--输入的具体价格-->
+      <button class="A5-4" size="mini" bindtap="xianjiajia">+</button>      <!--加号按钮-->
+    </view>
+  </view>
+
+  <view class="A9">    <!--第五栏-->
+    <view class="A9-1"> 
+      <text class="kk">*</text>
+      <text class="smp2">地址</text>    <!--地址-->
+      <textarea name="Tradename3" cols="30" rows="3" placeholder="请输入交接地址" class="tradename"
+    maxlength="200" value="{{addre}}"></textarea>  
+    </view>
+  </view>
+  
+  <view class="A6">     <!--第七栏-->
+    <view class="A6plus">   <!--添加图片介绍 （必填 长按可删除）-->
+      <text>添加图片介绍 （必填 长按可删除）</text> 
+    </view>
+  </view>
+
+
+  <view class="img_box">  <!--图片栏-->
+    <view class="imgs" wx:for="{{tempFilePaths}}">  <!--上传成功后图片的显示-->
+      <image src="{{item}}" class="imgss"bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}"/>  <!--上传成功的图片的大小-->
+    </view>
+    <view class="images" bindtap="upload">  <!--上传图片的框框-->
+      <image src='/image/picture/imageadd.png' class="addbtnimage"/>    <!--添加图片的那张图片的样式-->
+    </view>
+    
+  </view>
+
+  <view class="A7">
+    <button size="mini" class="A7-1" form-type="submit">立即发布</button>   <!--发布按钮-->
+  </view>
+  <view class="A8">
+    <button size="mini" class="A8-1" form-type="reset" bindtap="dup">清空内容</button>  <!--清空按钮-->
+  </view>
+</form>

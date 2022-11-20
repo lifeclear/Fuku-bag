@@ -1,0 +1,346 @@
+
+
+
+page{
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  --main-border-ulradius: 0px;
+  --main-border-urradius: 0px;
+  --main-border-drradius: 0px;
+  --main-botton-color: rgb(255, 255, 255);
+}
+
+/* 轮播图部分 START */
+.swiper{
+  height: 40px;
+  width: 100%;
+}
+
+.slide-image{
+  border-radius: 5%;
+  width: 100%;
+}
+/* 轮播图部分 FINSH */
+
+
+ /* 按钮及文章部分 SRTART */
+.button-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container .title{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 33.3%;
+}
+
+.button-container .title .active{
+    position: relative;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: black;
+    border-top-left-radius: var(--main-border-ulradius);
+    border-top-right-radius: var(--main-border-urradius);
+    border-bottom-right-radius: var(--main-border-drradius);
+    background-color: var(--main-botton-color);
+}
+
+.button-container .title .inactive{
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.562);
+    color: white;
+}
+
+.line{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+}
+ 
+.content{
+  display: flex;
+  padding-bottom: 100px;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  width: 100%;
+  background-color:var(--main-botton-color);
+}
+ /* 按钮及文章部分 END */
+
+ /* 导航栏部分 START */
+ /* 导航栏部分 END */
+
+
+ /* 悬赏列表部分 START */
+ .task_list{
+  position: relative;
+  margin-top: 8%;
+  width: 100%;
+  left: 10%;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    height: 220px;
+    width: 80%;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #fbfbfb, #e7e7e7);
+    box-shadow:  7px 7px 14px #dbdbdb,
+                 -7px -7px 14px #fbfbfb;
+}
+
+.img_box{ 
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 15px;
+  height: 20px;
+}
+.img{
+  position: relative;
+  margin-left: 10%;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: larger;
+}
+.user_name{
+  font-size: 28px;
+  margin-left: 5px;
+  width: 60px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.task_content{
+  position: relative;
+  margin-top: 10%;
+  margin-left: 10%;
+  height: 40%;
+  width: 75%;
+
+}
+
+.task_money{
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 60px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20%;
+  margin-right: 4%;
+  margin-top: 2%;
+  font-family:fantasy;
+}
+
+.task_kind{
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.task_info{
+  margin-bottom: 3px;
+}
+.task_info h1{
+  color:rgb(151, 60, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.task_kind h1{
+  color:rgb(151, 60, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.line{
+  display: flex;
+  position:relative;
+  margin-top: 20px;
+  background-color: white;
+  height: 1px;
+}
+
+.task_choice{
+  display:flex;
+  flex-direction: row;
+  height: 30px;
+}
+
+.task_time{
+  display: inline;
+  margin-top:3%;
+  width: 120px;
+  margin-left: 10%;
+  font-size: 14px;
+  color:rgb(141, 84, 84);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.task_more_info{
+  background-color:black;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  margin-top:3%;
+  padding-top: 2px;
+  font-size: 14px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 100;
+}
+
+.task_content h3{
+  color:black;
+}
+ /* 悬赏列表部分 END */
+
+/* 投票列表部分 START */
+.vote_table{
+  width: 690rpx;
+  height: 190rpx;
+  border-radius: 30rpx;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx rgb(255, 185, 188);
+}
+.vote_photo{
+   height: 30px;
+   width: 30px;
+
+}
+
+.vote_task_time{
+  transform: translate(40px,15px);
+}
+
+.vote_content{
+  max-height: 200px;
+  padding-top: 30px;
+  font-size: 20px;
+  overflow: hidden;
+  font-weight:bold;
+}
+.vote_content::first-letter{
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.vote_box{
+   display: flex;
+}
+
+.vote_word1{
+  font-size: 35rpx;
+  font-weight: bold;
+  width: 400rpx;
+  height: 200rpx;
+  text-align: left;
+  line-height: 90rpx;
+}
+
+.vote_word2{
+  font-size: 35rpx;
+  width: 400rpx;
+  height: 200rpx;
+  text-align: center;   /* 左右居中 */
+  line-height: 90rpx;  /* 设置行高 使文字上下居中 */
+}
+
+.vote_bottom_part{
+  display: flex;
+  background-color: black;
+  height: 280px;
+  width: 100%;
+}
+.vote_take_more_info{
+  font-size: 23px;
+}
+/* 投票列表部分 END   */
+
+
+/* 商品列表部分 START */
+
+.input1{
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0FEEEE;
+  }
+  
+  
+ 
+  
+  .goods_list{
+      display:flex;
+      flex-direction:row;
+      justify-content:flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+  }
+  
+  
+    .goods_box{
+        display: flex;
+        position: relative;
+        width: 90%;
+        height: 140px;
+        align-items: item;
+        margin-bottom: 10px;
+        margin-left: 5%;
+        margin-top: 10px;
+        border-radius: 15px;
+        background: linear-gradient(145deg, #fbfbfb, #e7e7e7);
+        box-shadow:  s
+                     -7px -7px 14px #fbfbfb;
+    }
+    .images{
+        width: 230rpx;
+        height: 230rpx;
+         display: flex;
+         align-items: center;
+        justify-content: center;
+        margin-top: 30rpx;
+    }
+    .image{
+      border-radius: 10%;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .goods_title
+    {
+        margin-top: 10px;
+        display: flex;
+        position: relative;
+        font-size: 20px;
+    }
+    .goods_description
+    {
+       margin-top:5px;
+       font-size: 10px;
+    }
+
+    .goods_money{
+      font-size: 30px;
+    }
+    .goods_money::before{
+        content: "¥";
+    }  
+/* 商品列表部分 END   */

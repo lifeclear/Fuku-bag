@@ -1,0 +1,34 @@
+<!--pages/setting/setting.wxml-->
+<view class="hz">
+<view class="Trans">
+<view class="tx">头像</view>
+<view class="HI"></view>
+</view>
+<view class="Trans">
+<view class="username">用户名</view>
+<view class="view-contain-ti" style="position: relative; left: 237rpx; top: 0rpx">
+    <input class="input1" style="width: 381rpx; height: 44rpx; display: block; box-sizing: border-box; position: relative; left: 2rpx; top: -2rpx"></input>
+</view>
+
+</view>
+<view class="Trans">
+<view class="school">学校</view>
+<view class="xx" style="width: 416rpx; height: 44rpx; display: flex; box-sizing: border-box; position: relative; left: 237rpx; top: 0rpx">
+<input style="width: 409rpx; height: 44rpx; display: block; box-sizing: border-box" type="input2"/>
+</view>
+
+</view>
+<view class="Trans" style="width: 716rpx; height: 60rpx; display: flex; box-sizing: border-box">
+    <picker mode="date" header-text="选择时间"  value="{{date}}" bindchange="bindDateChange">
+  <view class="font30">
+    <view class="color3">出生日期</view>
+    <text class="color6" style="position: relative; left: 497rpx; top: -40rpx">{{date}}</text>
+    <text class="timeIcon" style="position: relative; left: 492rpx; top: -45rpx">▼</text>
+  </view>
+</picker>
+</view>
+<view bindtap="goTo1" class="Trans" style="position: relative; left: 0rpx; top: -20rpx">
+<view class="adress">地址</view>
+<image  style="width: 64rpx; height: 57rpx; display: block; box-sizing: border-box; position: relative; left: 565rpx; top: 0rpx" src="../my/tishi.png" mode=""/>
+</view>
+</view>

@@ -1,0 +1,12 @@
+<view class="goods_list">
+    <view class="goods_box" wx:for="{{shop_list}}" wx:for-item="item" >
+        <view class="img_box">
+            <view class="images" catchtap="onDetail" data-id="{{item.id}}">
+               <image src='../../../images/TouXiang.png' class="image"/>
+            </view>
+        </view>
+        <view class="goods_title">{{item.goodsName}}</view>
+        <view class="goods_description">{{item.description}}</view>
+        <view class="goods_money">{{item.price}}</view>
+    </view> 
+</view>

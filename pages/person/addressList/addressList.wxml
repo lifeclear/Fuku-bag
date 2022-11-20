@@ -1,0 +1,49 @@
+<view class='list-item' >
+<view class='item-head'>
+    <text>祖力</text>
+    <text class='right'>17777777777</text>
+</view>
+
+<view class='item-desc'>
+   <text>福建省福州市</text>
+   <text>福州大学旗山校区</text>
+   <text>32号楼409</text>
+</view>
+
+<view class='item-edit'>
+   <view class='left'>
+       <switch type="checkbox" bindchange="beDefault" 
+data-id="1" checked="{{true}}" />
+        <text class='ctr'>设为默认</text>
+  </view>
+  <view class='right'>
+      <text bindtap="navigateToEdit" data-id="1">编辑</text> -
+      <text bindtap="delAddr" data-id="1">删除</text>
+  </view>
+</view>
+</view>
+<view class='list-item' >
+<view class='item-head'>
+    <text>祖力</text>
+    <text class='right'>17777777777</text>
+</view>
+
+<view class='item-desc'>
+   <text>福建省福州市</text>
+   <text>福州大学旗山校区</text>
+   <text>32号楼409</text>
+</view>
+
+<view class='item-edit'>
+   <view class='left'>
+       <switch type="checkbox" bindchange="beDefault" 
+data-id="1" checked="{{ false }}" />
+        <text class='ctr'>设为默认</text>
+  </view>
+  <view class='right'>
+      <text bindtap="navigateToEdit" data-id="1">编辑</text> -
+      <button bindtap="delAddr" data-id="1">删除</button>
+  </view>
+</view>
+</view>
+<button bindtap="goTo1" style="width: 242rpx; height: 50rpx; display: block; box-sizing: border-box; left: -86rpx; top: 0rpx; position: relative">新增地址</button>

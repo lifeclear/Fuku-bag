@@ -1,0 +1,54 @@
+<view class = "box">
+  <view class = "img_box">
+        <image src="../../../images/TouXiang.png" class="img"></image>
+        <h2 class="user_name">{{task.publisher}}</h2>
+  </view>
+  <view class="box_content">
+      <view id="row">
+        <view id="title">悬赏</view>
+        <view id="content" style="margin-left: 5px;">¥{{task.rewarded}}</view>
+      </view>
+      <view id="row">
+        <view id="title">种类</view>
+        <view id="content">跑腿</view>
+      </view>
+      <view id="row">
+        <view id="title">取件地址</view>
+        <view id="content">{{task.taskAddress}}</view>
+      </view>
+      <view id="row">
+        <view id="title">送件地址</view>
+        <view id="content">{{task.deliveryAddress}}</view>
+      </view>
+      <view id="row">
+        <view id="title">备注</view>
+        <view id="content">{{task.remark}}</view>
+      </view>
+      <view wx:if="{{status==1}}" id="row">
+        <view id="title">手机号码</view>
+        <view id="content">{{task.sponsorPhone}}</view>
+      </view>
+      <view wx:if="{{status==1}}" id="row">
+        <view id="title">补充图片</view>
+        <view wx:for="{{task.pictures}}" wx:for-item="pic" class="image_row">
+            <!-- <view>{{pic}}</view> -->
+            <image src="{{pic}}" class="info_img"></image>
+        </view>  
+        <view id="content">{{task.goodsnumber}}</view>
+      </view>
+      
+  </view>
+
+
+  <view  id='row'>
+      <button class='button back' catchtap="onBack">
+          回退
+      </button>
+      <button wx:if = "{{status==0}}" class='button accept' catchtap="onAccept">
+          接受
+      </button>
+      <button wx:if = "{{status==1}}" class='button cancel' catchtap="onCancel">
+          取消
+      </button>
+  </view>
+</view>

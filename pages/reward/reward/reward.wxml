@@ -1,0 +1,33 @@
+<view class = "task_list" wx:for="{{task_list}}" wx:for-item="task">
+    <view class="box">
+      <view class = "img_box">
+        <image src="../../../images/TouXiang.png" class="img"></image>
+        <h2 class="user_name">{{task.publisher}}</h2>
+        <h3 class="task_money">${{task.rewarded}}</h3>
+      </view>
+      <view class="task_content">
+        <view class="task_kind">
+          <h1>类型：</h1>
+          <h3>跑腿 </h3>
+        </view>
+        <view class="task_info">
+          <h1>取件：</h1>
+          <h3>{{task.taskAddress}}</h3>
+        </view>
+        <view class="task_info">
+          <h1>送件：</h1>
+          <h3>{{task.deliveryAddress}}</h3>
+        </view>
+      </view>
+         <view class="line"></view>
+<block></block>
+      <view class="task_choice">
+          <view class="task_time" style="font-size: 12px;margin-top: 10px;">
+            48分钟以前
+          </view>
+          <view class="task_more_info" catchtap="onDetail" data-id="{{task.id}}">
+            more detail
+          </view>
+      </view>
+    </view>
+</view>
