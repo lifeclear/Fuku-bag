@@ -1,0 +1,47 @@
+button{
+    display: inline-block;
+  }
+.box{
+    position: relative; left: 0rpx; top: 26rpx; 
+    width: 640rpx; height: 340rpx; 
+    display: block; box-sizing: border-box;
+    /* background-color: coral; */
+    margin: 0 auto;
+    margin-bottom: 10px;
+} 
+.name{
+    position: relative; left: 0rpx; top: 0rpx; 
+    width: 472rpx; height: 80rpx; 
+    display: block; box-sizing: border-box;
+}
+.yaoqiu{
+    position: relative; left: 0rpx; top: 0rpx; 
+    width: 640rpx; height: 80rpx; 
+    display: block; box-sizing: border-box;
+}
+.money{
+    position: relative; left: 540rpx; top: -160rpx; 
+    width: 100rpx; height: 80rpx; 
+    display: block; box-sizing: border-box;
+}
+.beizhu{
+    width: 472rpx; height: 58rpx; 
+    display: block; box-sizing: border-box; 
+    position: relative; left: 0rpx; top: -58rpx;
+}
+.zhuangtai{
+    width: 150rpx; height: 58rpx; 
+    display: block; box-sizing: border-box; 
+    position: relative; left: 490rpx; top: -116rpx;
+}
+/* button::after{
+    border: none;
+} */
+.del{
+    width: 10rpx;
+    height: 15rpx;
+    background-color: azure;
+}
+
+
+

@@ -1,0 +1,130 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}"
+interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image"></image>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="button-container">
+    <view catchtap="onChangeIndex" data-index="{{0}}" class="title">
+        <view wx:if="{{showIndex==0}}" class="active">
+            悬赏
+        </view>
+        <view wx:if="{{showIndex!=0}}" class="inactive">
+            悬赏
+        </view>
+    </view>
+
+    <view catchtap="onChangeIndex" data-index="{{1}}" class="title">
+        <view wx:if="{{showIndex==1}}" class="active">
+            <text>投票</text>
+        </view>
+        <view wx:if="{{showIndex!=1}}" class="inactive">
+            投票
+        </view>
+    </view>
+
+    <view catchtap="onChangeIndex" data-index="{{2}}" class="title">
+        <view wx:if="{{showIndex==2}}" class="active">
+            淘货
+        </view>
+        <view wx:if="{{showIndex!=2}}" class="inactive">
+            淘货
+        </view>
+    </view>
+</view>
+
+
+
+<!-- content -->
+
+
+<!-- 悬赏部分的渲染 START -->
+<view wx:if="{{showIndex==0}}" class="content">
+ <view class="task_list">
+   
+  <view wx:for="{{List_reward}}" wx:for-item="task">
+    <view class="box">
+      <view class = "img_box">
+        <image src="../../images/TouXiang.png" class="img"></image>
+        <h2 class="user_name">{{task.publisher}}</h2>
+        <h3 class="task_money">${{task.rewarded}}</h3>
+      </view>
+      <view class="task_content">
+        <view class="task_kind">
+          <h1>类型：</h1>
+          <h3>跑腿 </h3>
+        </view>
+        <view class="task_info">
+          <h1>取件：</h1>
+          <h3>{{task.taskAddress}}</h3>
+        </view>
+        <view class="task_info">
+          <h1>送件：</h1>
+          <h3>{{task.deliveryAddress}}</h3>
+        </view>
+      </view>
+      <view class="task_choice" bindtap="onRewardDetail">
+          <view class="task_time" style="font-size: 12px;margin-top: 10px;">
+            48分钟以前
+          </view>
+          <view class="task_more_info" bindtap="onRewardDetail" data-id="{{task.id}}">
+            more detail
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+<!-- 悬赏部分的渲染 END -->
+
+
+<!-- 投票部分的渲染 START -->
+<view wx:if="{{showIndex==1}}" class="content">
+  <view class="task_list">
+      <view class="box vote_box" wx:for="{{List_vote}}" style="overflow: hidden;" wx:for-item="vote" >
+          <view class="task_content">
+             <view class="task_info vote_content">
+                  {{vote.content}}
+             </view>
+          </view>
+          <view class="line" style="height: 2px;"></view>
+
+
+      <view class="task_choice">
+        <view class="vote_bottom_part" style="display: flex;">
+               <view class = "img_box">
+               <image src="../../images/TouXiang.png" class="img" style="margin-left: 30px;"></image>
+                <h2 class="user_name">{{task.publisher}}</h2>
+               </view>
+               <view class="task_more_info vote_take_more_info" bindtap="onVoteDetail"  data-id="{{task.id}}">
+                   more detail
+               </view>
+        </view>
+      </view>
+  
+      </view>
+  </view>
+</view>
+<!-- 投票部分的渲染 END -->
+
+
+<!-- 淘货部分的渲染 START -->
+<view wx:if="{{showIndex==2}}" class="content">
+    <view class="goods_list">
+    <view class="goods_box" wx:for="{{List_goods}}" wx:for-item="item" >
+            <view class="images" catchtap="onGoodsDetail" data-id="{{item.id}}" style="margin-top: 20px;margin-left: 10px;">
+               <image src='../../images/TouXiang.png' class="image"/>
+            </view>
+            <view class="goods_content" style="margin-left: 6%;">
+            <view class="goods_title" style="margin-top: 30px;">{{item.goodsName}}</view>
+                <view class="goods_description"><text>  </text>{{item.description}}</view>
+                <view class="goods_money" style="margin-top:3px;">{{item.price}}</view>
+            </view>
+    </view> 
+    </view>
+</view>
+<!-- content -->
+

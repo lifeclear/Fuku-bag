@@ -1,0 +1,4 @@
+/* pages/help/help.wxss */
+.button{
+    background-color: rgb(151, 235, 130);
+}

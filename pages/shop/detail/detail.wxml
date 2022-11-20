@@ -1,0 +1,47 @@
+<view class="sp">
+    <text class="spm">(//商品名)：{{spmc}}</text>
+  </view>
+
+  <view class="img_box">
+    
+    <view class="images" >
+      <image src="{{tempFilePaths}}" class="img"></image>
+    </view>
+    
+  </view>
+ 
+
+  
+
+
+<view class="price">
+  <view class="newmoney" >￥{{xj}}</view>
+  <text class="oldmoney">原价￥{{yj}}</text>
+  <text class="type">类型{{lx}}</text>
+</view>
+
+<view class="k">
+    <text class="kk">地址：{{addre}}</text>
+  </view>
+
+
+<view class="btm_tool">
+
+<view class="tool_item">
+  <view class="iconfont iconfenxiang"></view>
+  <view>分享</view>
+  <button open-type="share"></button>
+</view>
+<view class="tool_item" bindtap="contract">
+  <view class="iconfont iconlianxi"></view>
+  <view>联系</view>
+  <button></button>
+</view>
+
+<view class="tool_item btn_cart " bindtap="handleCartAdd">
+加入购物车
+</view>
+<view class="tool_item btn_buy" bindtap="buy">
+  立即购买
+</view>
+</view>

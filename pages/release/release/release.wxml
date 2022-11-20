@@ -1,0 +1,4 @@
+<button bindtap="onReachRewards">发布悬赏</button>
+<button bindtap="onReachVote">发布投票</button>
+<button bindtap="onReachShop">发布商品</button>
+

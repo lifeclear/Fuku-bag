@@ -1,0 +1,13 @@
+<view class="content">
+
+<button bindtap="login" wx:if="{{isshow}}" class="an" >请点击登录</button>
+
+<view class="userinfo" wx:else>
+
+<image src="{{img}}" class="img"></image>
+
+<view class="name">{{name}}</view>
+
+</view>
+
+</view>

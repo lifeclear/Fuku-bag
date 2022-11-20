@@ -1,0 +1,98 @@
+/* pages/my/my.wxss */
+/* pages/first/first.wxss */
+  .Mine {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50rpx;
+      margin-left: 35rpx;
+  }
+  
+  .Trans {
+      display: flex;
+      margin-top: 30rpx;
+      margin-bottom: 30rpx;
+  }
+  
+  .Instru {
+      position: relative;
+      left: 500px;
+      top: 0px;
+      width: 50rpx; 
+      height: 50rpx;
+  }
+  .name{
+
+    font-size: 25px;
+  
+  }
+  
+  .an{
+  
+  background-color: rgb(247, 248, 248);
+  
+  height: 40px;
+  
+  top: 40px;
+  
+  }
+  
+  .img{
+  
+    width: 65px;
+  
+    height: 65px;
+  
+    display: inline-block;
+  
+    border-radius: 50%;
+  
+    overflow: hidden;
+  
+    border: 1px solid #131212;
+  
+    margin-right: 20px;
+  
+  }
+  
+  .userinfo{
+  
+   top: 10px;
+  
+    display: flex;
+  
+    flex-direction: row;
+  
+    width: 100%;
+  
+    height: 100px;
+  
+    align-items: center;  
+  
+  }
+  
+  .content{
+  
+    padding: 0px;
+  
+    margin-bottom: 30px;
+  
+    height: 100px;
+  
+   flex-direction: column;
+  
+   background-color: rgb(255, 255, 255);
+  
+    }
+    .root{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    .touxiang{
+        width:200rpx;
+        height:200rpx;
+        border-radius:50%;
+        margin-top:30rpx;
+        margin-bottom:10rpx;
+    }
+    

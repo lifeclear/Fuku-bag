@@ -1,0 +1,217 @@
+/* 第一栏 */
+.A1{  
+  display: flex;
+  width: 100%;
+}
+/* 必填标识* */
+.kk{
+  width: 30rpx;
+  margin-left: 10rpx;
+  color: red;
+}
+/* 商品名 */
+.smp{
+  margin-left: 5rpx;
+  width: 180rpx;
+  height: 40rpx;
+}
+/* 详细介绍 */
+.smp1{
+  margin-left: 5rpx;
+  width: 180rpx;
+  height: 40rpx;
+}
+/* 第一栏的文本框大小 */
+.A1 text{
+  font-size: 28rpx;
+}
+/* 商品名和输入款打包在一行 */
+.A1-1{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid  rgb(231, 226, 226);
+}
+/* 输入框 */
+.tradename{
+  margin-top: 30rpx;
+  margin-left: 25rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+}
+/* 第二栏 */
+.A2{
+  display: flex;
+  width: 100%;
+}
+/* 第二栏的文本框 */
+.A2 text{
+  font-size: 28rpx;
+}
+/* 第二栏中的框 框里左边详细介绍右边输入框 */
+.A2-1{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid  rgb(231, 226, 226);
+}
+/* 第三栏 */
+.A3-1{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid  rgb(231, 226, 226);
+}
+/* 第三栏的框 */
+.A3-2{
+  margin-left: 5rpx;
+  width: 80%
+}
+/* 第三栏的文本框 */
+.A3 text{
+  font-size: 28rpx;
+}
+/* 类型的输入框 */
+.tradename1{
+  margin-left: 25rpx;
+  height: 35rpx;
+  width: 20%;
+  font-size: 26rpx;
+  align-items: center;
+  justify-content: center;
+}
+/* 第四栏 */
+.A5{
+  border-bottom: 1rpx solid  rgb(231, 226, 226);
+  height: 100rpx;
+}
+/* 预售价格那一行的框 */
+.A5plus{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+}
+/* 预售价格 */
+.A5-1{
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+  font-size: 28rpx;
+  width: 500rpx;
+}
+/* 减号按钮 */
+.A5-2{
+  margin-top: 15rpx;
+  width: 30rpx;
+}
+/* 价格的输入框 */
+.A5-3{
+  margin-top: 25rpx;
+  width: 60rpx;
+}
+/* 加号按钮 */
+.A5-4{
+  margin-top: 15rpx;
+}
+/* 第五栏 */
+.A9{
+    display: flex;
+    width: 100%;
+  }
+  /* 第九栏的文本框 */
+  .A9 text{
+    font-size: 28rpx;
+  }
+  /* 地址那一行的框 */
+  .A9-1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 100rpx;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1rpx solid  rgb(231, 226, 226);
+  }
+  /* 地址 */
+  .smp2{
+    margin-left: 5rpx;
+    width: 180rpx;
+    height: 40rpx;
+  }
+/* 第七栏 */
+.A6{
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid  rgb(231, 226, 226);
+  display: flex;
+  flex-direction: row;
+}
+/* 添加图片介绍（必填 长按可删除） */
+.A6plus{
+  height: 40rpx;
+  width: 100%;
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+}
+/* 文本框 */
+.A6plus text{
+  font-size: 28rpx;
+}
+/* 发布按钮 */
+.A7-1{
+  margin-left: 285rpx;
+  margin-top: 30rpx;
+  background-color:hsl(184, 76%, 73%);
+}
+/* 清空按钮 */
+.A8-1{
+  margin-left: 285rpx;
+  margin-top: 30rpx;
+}
+/* 图片栏 */
+.img_box{
+  display: flex;
+  flex-wrap: wrap;
+  position:relative;
+}
+/* 上传成功图片的大小 */
+.imgss{
+  width: 100%;
+  height: 100%;
+}
+/* 上传成功后的图片大小显示 */
+.imgs{
+  width: 210rpx;
+  height: 210rpx;
+  border: 1rpx solid rgb(196, 196, 196);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+/* 上传图片的框框 */
+.images{
+  width: 210rpx;
+  height: 210rpx;
+  border: 1rpx solid rgb(196, 196, 196);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  
+}
+/* 添加图片的那张图片样式 */
+.addbtnimage{
+  width: 50%;
+  height: 50%;
+}

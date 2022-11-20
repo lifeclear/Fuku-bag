@@ -1,0 +1,28 @@
+<button type="primary" bindtap="Income" style="position: relative; left: 8rpx; top: 38rpx">我参与的</button>
+<button type="primary" bindtap="Expenditure" style="position: relative; left: 8rpx; top: 38rpx">我发布的</button>
+
+<view  wx:if="{{chooseIncome == true}}" style="width: 688rpx;  background-color: darkgrey; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: 30rpx">
+  <view class="box" wx:for="{{list}}" wx:for-item="item">
+  <button bindtap="onDel" data-id="{{item.id}}">删除</button>
+  <view class="name">{{item.title}}</view>
+  <view class="yaoqiu">任务要求：{{item.content}}</view>
+  <view class="money">￥{{item.reward}}</view>
+  <view class="beizhu">备注:{{item.remark}}</view>
+  <view class="zhuangtai">情况{{item.status}}</view>
+
+  </view>
+</view>
+
+
+<view wx:if="{{chooseExpenditure == true}}" style="width: 688rpx; background-color: darkgrey; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: 30rpx">
+    <view class="box" wx:for="{{list}}" wx:for-item="item">
+        <button bindtap="onDel" data-id="{{item.id}}">删除</button>
+  <view class="name">{{item.title}}</view>
+  <view class="yaoqiu">任务要求：{{item.content}}</view>
+  <view class="money">￥{{item.reward}}</view>
+  <view class="beizhu">备注:{{item.remark}}</view>
+  <view class="zhuangtai">情况{{item.status}}</view>
+
+  </view>
+
+</view>

@@ -1,0 +1,71 @@
+<!--pages/release/release.wxml-->
+<form bindsubmit="Publish">
+<view class="box">
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <button style="width: 50px;" class="cu-btn bg-white round ">取消</button>
+    </view>
+    <view class="content text-bold">
+      发布投票
+    </view>
+    <view class="action">
+    <button  style="width: 50px;" class="cu-btn bg-yellow round " form-type="submit">发布</button></view>
+  </view>
+</view>
+
+<view id="searchOuterView">
+  <view id="searchInnerView">
+      <input name="content" class="weui-input " auto-focus placeholder="  将你的困惑/选择困难症交给大家投票吧~"/>  
+    </view>
+</view>
+<view id="searchOuterView">
+  <view id="titleInnerView">
+      <input name="title" class="weui-input " auto-focus placeholder="  添加标题会更加吸引人哦"/>  
+    </view>
+</view>
+<view>
+<view id="searchOuterView">
+  <view id="titleInnerView">
+      <input name="option" class="weui-input " auto-focus placeholder="  选项A"/>   
+    </view>
+    <view id="titleInnerView">
+      <input name="option" class="weui-input " auto-focus placeholder="  选项B"/>  
+    </view>
+</view>
+</view>
+<view id="searchOuterView">
+<view class="pictureview">
+<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/2
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<2}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+</view>
+</view>
+<view id="searchOuterView">
+<view class="tagview">
+<view class="tag">
+  <text class="cuIcon-tagfill text-xl text-gray"></text>
+  <text>添加标签</text>
+</view>
+<input name="label" class="weui-input " auto-focus placeholder="    添加标签推荐给感兴趣的人吧"/> 
+</view>
+</view>
+</form>
+

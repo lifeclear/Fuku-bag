@@ -1,0 +1,52 @@
+<!--pages/my/my.wxml-->
+<view>
+    <!--pages/my/my.wxml-->
+<view>
+<button wx:if="{{!userInfo}}" bindtap="login">授权登录</button>
+<view wx:else class="root">
+  <image class="touxiang" src="{{userInfo.avatarUrl}}"></image>
+  <text class="nicheng">{{userInfo.nickName}}</text>
+  <button bindtap="loginOut">退出登录</button>
+</view>
+
+
+   
+    <view class="Mine">
+        <view bindtap="goTo1" class="Trans">
+            <view>我的任务</view>
+            <image  class="Instru" src="tishi.png" style="position: relative; left: 530rpx; top: 0rpx">
+            </image>
+        </view>
+        <view bindtap="goTo2" class="Trans">
+            <view>我的投票</view>
+           
+            <image  class="Instru" src="tishi.png" style="position: relative; left: 530rpx; top: 0rpx"></image>
+        </view>
+
+        <view bindtap="goTo6" class="Trans">
+            <view>我的闲置</view>
+    
+            <image  class="Instru" src="tishi.png" style="position: relative; left: 495rpx; top: 0rpx"></image>
+        </view>
+
+        <view bindtap="goTo3" class="Trans">
+            <view>消息</view>
+           
+            <image  class="Instru" src="tishi.png" style="position: relative; left: 595rpx; top: 0rpx"></image>
+        </view>
+        <view bindtap="goTo4" class="Trans">
+            <view>个人设置</view>
+            
+            <image  class="Instru" src="tishi.png" style="position: relative; left: 530rpx; top: 0rpx"></image>
+        </view>
+        <view bindtap="goTo5" class="Trans">
+            <view>帮助与反馈</view>
+    
+            <image  class="Instru" src="tishi.png" style="position: relative; left: 495rpx; top: 0rpx"></image>
+        </view>
+        
+    </view>
+</view>
+</view>
+
+

@@ -1,0 +1,24 @@
+.flex-container {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+.UserHeadImage {
+    margin: 50rpx;
+    margin-left: 35rpx;
+}
+
+.UserHeadImage image{
+    width: 130rpx;
+    height: 130rpx;
+    background-color: #ad9191;
+    border-radius: 65rpx;
+}
+.UserName{
+font-size: 30px;
+}
+.user-name {
+    width: 350rpx;
+    height: 300rpx;
+}

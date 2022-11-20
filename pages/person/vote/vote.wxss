@@ -1,0 +1,31 @@
+button{
+    display: inline-block;
+  }
+.one{
+    position: relative; left: 0rpx; top: 26rpx; 
+    width: 640rpx; height: 196rpx; 
+    display: block; box-sizing: border-box
+    
+}  
+.img{
+    width: 200rpx; height: 200rpx; 
+    display: inline-block; box-sizing: border-box; 
+    position: relative; left: -22rpx; top: -29rpx;
+    border-radius: 100%;
+}
+.yh{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding-left: 19%;
+}
+
+.zhuti {
+    position: relative; left: 200rpx; top: -208rpx; width: 462rpx; height: 42rpx; 
+    display: block; box-sizing: border-box
+}
+.xuanze{
+    position: relative; left: 200rpx; top: -170rpx; 
+    width: 462rpx; height: 42rpx; 
+    display: block; box-sizing: border-box
+}

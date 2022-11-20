@@ -1,0 +1,56 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/reward/reward/reward",
+        "pages/reward/detail/detail",
+        "pages/vote/vote/vote",
+        "pages/vote/detail/detail",
+        "pages/shop/shop/shop",
+        "pages/shop/detail/detail",
+        "pages/release/vote/vote",
+        "pages/release/shop/shop",
+        "pages/release/release/release",
+        "pages/release/goods/goods",
+        "pages/release/rewards/rewards",
+        "pages/person/person/person",
+        "pages/person/addressList/addressList",
+        "pages/person/help/help",
+        "pages/person/message/message",
+        "pages/person/my/my",
+        "pages/person/setting/setting",
+        "pages/person/task/task",
+        "pages/person/vote/vote",
+        "pages/person/xianzhi/xianzhi"
+    ],
+    "tabBar": {
+        "color": "#000330",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./images/home_inactive.png",
+                "selectedIconPath": "./images/home_active.png"
+            },
+            {
+                "pagePath": "pages/release/release/release",
+                "text": "发布",
+                "iconPath": "./images/plus_inactive.png",
+                "selectedIconPath": "./images/plus_active.png"
+            },
+            {
+                "pagePath": "pages/person/my/my",
+                "text": "设置",
+                "iconPath": "./images/settings_inactive.png",
+                "selectedIconPath": "./images/settings_active.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+}

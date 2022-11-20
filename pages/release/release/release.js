@@ -1,0 +1,45 @@
+Page({
+    data:{},
+    onReachRewards:function(){
+        wx.navigateTo({
+          url: '../rewards/rewards',
+          success:function(){
+              console.log("成功跳转到发布悬赏")
+          },
+          fail:function(res){
+              console.log("跳转发布悬赏失败，失败的原因如下：",res);
+          },
+          complete:function(){
+              console.log("完成跳转悬赏发布");
+          }
+        })
+    },
+    onReachVote:function(){
+        wx.navigateTo({
+          url: '../vote/vote',
+          success:function(){
+              console.log("成功跳转到发布投票")
+          },
+          fail:function(res){
+              console.log("跳转发布投票失败，失败的原因如下：",res);
+          },
+          complete:function(){
+              console.log("完成跳转投票发布");
+          }
+        })
+    },
+    onReachShop:function(){
+        wx.navigateTo({
+          url: '../shop/shop',
+          success:function(){
+              console.log("成功跳转到发布投票")
+          },
+          fail:function(res){
+              console.log("跳转发布投票失败，失败的原因如下：",res);
+          },
+          complete:function(){
+              console.log("完成跳转投票发布");
+          }
+        })
+    }
+})
