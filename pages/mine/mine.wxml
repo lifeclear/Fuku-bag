@@ -1,0 +1,2 @@
+<!--pages/mine/mine.wxml-->
+<button bindtap="Myreward">我的发布</button>

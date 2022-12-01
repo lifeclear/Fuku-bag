@@ -1,0 +1,56 @@
+<view class="Container">
+    <!-- 按钮部分 Start -->
+   <view wx:if="{{show_index==0}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:black;background-color:whitesmoke;" >我创建的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}"  style="color:whitesmoke;background-color:black;border-bottom-left-radius: 25rpx ;">我参与的</view>
+    </view>
+   
+    <view wx:if="{{show_index==1}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:whitesmoke;background-color:black;border-bottom-right-radius: 25rpx ;">我创建的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}" style="color:black;background-color:whitesmoke;">我参与的</view>
+    </view>
+    <view wx:if="{{show_index==0}}" class="container_box">
+      <view wx:for="{{List_my_sent}}" wx:key="*this">
+        <view bindlongtap="showModal" bindtap="Showgroup" data-id="{{item.id}}" class="box" style="height: 300rpx;">
+          <text class="name">{{item.title}}</text>
+          <text class="description">{{item.description}}</text>
+          <!-- <text>{{item.id}}</text> -->
+        </view>
+        <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+          <view class="modals-cancel" bindtap="hideModal"></view>
+          <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+              <view class="dialog-title">是否删除</view>
+              <view class="dialog-box">
+                  <!-- <view bindtap="change"  wx:for="{{areaList}}" wx:key="index"
+                  class="dialog-item {{index==indexstatus?'bg-blue':''}}"
+                  data-dialogid="{{index}}" bindtap="getValueTap">{{item}}</view> -->
+                  <button bindtap="Delete" data-id="{{item.id}}" >是</button>
+                  <button bindtap="Returnback">否</button>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view> 
+    <view wx:if="{{show_index==1}}" class="container_box">
+      <view wx:for="{{List_my_accept}}" wx:key="*this">
+        <view bindlongtap="showModal" bindtap="Showgroup_joined" data-id="{{item.id}}" class="box" style="height: 300rpx;">
+          <text class="name">{{item.title}}</text>
+          <text class="description">{{item.description}}</text>
+          <!-- <text>{{item.id}}</text> -->
+        </view>
+        <!-- <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+          <view class="modals-cancel" bindtap="hideModal"></view>
+          <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+              <view class="dialog-title">是否删除</view>
+              <view class="dialog-box">
+                  <view bindtap="change"  wx:for="{{areaList}}" wx:key="index"
+                  class="dialog-item {{index==indexstatus?'bg-blue':''}}"
+                  data-dialogid="{{index}}" bindtap="getValueTap">{{item}}</view>
+                  <button bindtap="Delete" data-id="{{item.id}}" >是</button>
+                  <button bindtap="Returnback">否</button>
+              </view>
+          </view>
+        </view> -->
+      </view>
+    </view>
+</view>

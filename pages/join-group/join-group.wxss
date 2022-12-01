@@ -1,0 +1,43 @@
+/* pages/join-group/join-group.wxss */
+.submit{
+  background-color: rgb(235, 191, 111);
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.reward_get{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+button::after{ 
+	border: none; 
+}
+button {
+  width: 80px;
+  height: 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.In_code{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  /* margin-left: 50rpx; */
+  align-items: center;
+  justify-content: center;
+}
+.incvitationcode{
+  border: 1rpx solid gray;
+  font-size: 18px;
+}
+.te_in_code{
+  font-size: 20px;
+}
+.p_in_code{
+  font-size: 14px;
+}

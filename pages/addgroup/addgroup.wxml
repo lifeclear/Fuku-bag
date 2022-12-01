@@ -1,0 +1,35 @@
+<view class="top">
+  <text class="reward_get">创建分组</text>
+</view>
+<text>\n</text>
+<l-form name="group" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+  <!-- <view class="top">
+    <button class="cancel">取消</button>
+    <text class="reward_get">创建分组</text>
+    <button class="submit" formType="submit">创建</button>
+  </view> -->
+  <!-- <text>\n</text>
+  <view class="horizon"></view>
+  <view class="shadow"></view>
+  <text>\n</text> -->
+  <view>
+    <l-form-item  name="groupname">
+      <l-input label="分组名称" l-label-class="l_label" id="groupname" value="{{group.groupname}}" placeholder="请输入名称" show-row="{{false}}"/>
+    </l-form-item>
+    <view class="v_t_description">
+      <text class="t_description">分组描述</text>
+    </view>
+    <l-form-item name="description">
+      <l-textarea id="description" value="{{group.description}}" hide-label show-row="{{false}}" indicator="{{true}}" maxlength="250" placeholder="说说你的想法吧..."  />
+    </l-form-item>
+  </view>
+  <text>\n</text>
+  <view class="shadow"></view>
+  <text>\n</text>
+  <view slot="submit">
+      <l-button l-class="submit" shape="semicircle">创建</l-button>
+  </view>
+  <view slot="reset">
+      <l-button bg-color="gray" shape="semicircle">取消</l-button>
+  </view>
+</l-form>

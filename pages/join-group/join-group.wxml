@@ -1,0 +1,16 @@
+<!--pages/join-group/join-group.wxml-->
+<view>
+  <form bindsubmit="Join_g">
+    <view class="top">
+      <button class="cancel">取消</button>
+      <text class="reward_get">加入分组</text>
+      <button class="submit" formType="submit">加入</button>
+    </view>
+    <view class="shadow"></view>
+    <view class="horizon"></view>
+    <view class="In_code">
+      <text class="te_in_code">邀请码：</text>
+      <input class="incvitationcode" name="incvitationcode" placeholder="请输入内容" placeholder-class="p_in_code"/>
+    </view>
+  </form>
+</view>

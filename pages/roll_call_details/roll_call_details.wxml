@@ -1,0 +1,48 @@
+<!--pages/roll_call_details/roll_call_details.wxml-->
+<view class="top">
+  <view class="details">
+    <view class="v_name">
+      <text class="l_name">名称：</text>
+      <text class="name">{{name}}</text>
+    </view>
+    <view class="horizon"></view>
+    <text>\n</text>
+    <view class="v_description">
+      <text class="l_description">描述：</text>
+      <text class="description">{{description}}</text>
+    </view>
+    <text>\n</text>
+    <view class="v_description">
+      <text class="l_description">开始时间：</text>
+      <text class="description">{{startTime}}</text>
+    </view>
+    <text>\n</text>
+    <view class="v_description">
+      <text class="l_description">截至时间：</text>
+      <text class="description">{{endTime}}</text>
+    </view>
+  </view>
+</view>
+<view class="shadow"></view>
+<text>\n</text>
+<l-tabs bind:linchange="changeTabs">
+  <l-tabpanel tab="所有" key="one" slot="one">
+    <view wx:for="{{AllStudent}}" wx:key="*this" class="tab-content">
+      <l-card  type="primary" plaintext="{{true}}" title="{{item}}">
+      </l-card>
+    </view>
+  </l-tabpanel>
+  <l-tabpanel tab="已签到" key="two" slot="two">
+    <view wx:for="{{Already_Student}}" wx:key="*this" class="tab-content">
+      <l-card  type="primary" plaintext="{{true}}" title="{{item.name}}">
+      </l-card>
+    </view>
+  </l-tabpanel>
+  <l-tabpanel tab="未签到" key="three" slot="three">
+    <view wx:for="{{not_yet_Student}}" wx:key="*this" class="tab-content">
+      <l-card  type="primary" plaintext="{{true}}" title="{{item.name}}">
+      </l-card>
+    </view>
+  </l-tabpanel>
+</l-tabs>
+<l-tab-bar list="{{list}}" />

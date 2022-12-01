@@ -1,0 +1,64 @@
+<view class="endtime">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <input name="endtime" class="chosetime" value='{{time}}' placeholder='选择时间' placeholder-class="chosetime-style"/>
+  </picker>
+</view>
+<button bindtap="Login">登录</button>
+<view class="shadow"></view>
+<button bindtap="location">位置</button>
+<view class="pickup_pic">
+  <l-image-picker count="3" clear="{{ isClear }}" bind:linchange="onChangeTap" size-type="compressed"/>
+</view>
+<button bindtap="openlocation">导航</button>
+<l-textarea indicator="{{true}}" maxlength="250" placeholder="说说你的想法吧..."  />
+<!-- <l-form name="student" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+    <l-input label="分组名称" placeholder="请输入用户名" />
+</l-form> -->
+<!-- <l-form name="student" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+    <l-form-item label="姓名:" name="studentName">
+        <l-input id="studentName" value="{{student.name}}" hide-label show-row="{{false}}"/>
+    </l-form-item>
+
+    <l-form-item label="年龄:" name="studentAge">
+        <l-input id="studentAge" value="{{student.age}}" hide-label show-row="{{false}}"/>
+    </l-form-item>
+
+    <l-form-item label="地址:" name="studentAddress">
+        <l-input id="studentAddress" value="{{student.address}}" hide-label show-row="{{false}}"/>
+    </l-form-item>
+
+
+    <view slot="submit">
+        <l-button>提交</l-button>
+    </view>
+    <view slot="reset">
+        <l-button type="default" plain>重置</l-button>
+    </view>
+</l-form> -->
+<!-- <l-slide-view height="140" width="750" slide-width="340"  >
+  <view slot="left" class="left">
+    <view class='left-con'>
+      <text class='left-title'>购买运动器材</text>
+      <text class='left-time'>10-26 18:50</text>
+    </view> 
+    <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+  </view>
+  <view slot="right" class="right">
+    <text>删除</text>
+  </view>
+</l-slide-view> -->
+<view class="item-content" bindtap="onselectTap" bindtap="showModal">{{areaCode}}</view>
+<view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+      <view class="dialog-title">是否删除</view>
+      <view class="dialog-box">
+          <!-- <view bindtap="change"  wx:for="{{areaList}}" wx:key="index"
+          class="dialog-item {{index==indexstatus?'bg-blue':''}}"
+          data-dialogid="{{index}}" bindtap="getValueTap">{{item}}</view> -->
+          <button>是</button>
+          <button bindtap="Returnback">否</button>
+      </view>
+  </view>
+</view>
+<button bindtap="tap" bindlongpress="longtap">你好</button>

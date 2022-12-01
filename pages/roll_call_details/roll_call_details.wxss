@@ -1,0 +1,42 @@
+/* pages/roll_call_details/roll_call_details.wxss */
+.details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  margin-top: 20px;
+}
+.l_name{
+  font-weight: bold;
+  font-size: large;
+}
+.name{
+  font-size: 15px;
+}
+.l_description{
+  font-weight: bold;
+  font-size: large;
+}
+.description{
+  font-size: 15px;
+}
+.v_name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.horizon{
+  width: 660rpx;
+  height: 1rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  background-color: #e5e5e5;
+  z-index: -99;
+}
+.shadow
+{
+  margin-left: 150;
+  width: 100%;
+  height: 8px;
+  background-color: rgb(206, 201, 201);
+}

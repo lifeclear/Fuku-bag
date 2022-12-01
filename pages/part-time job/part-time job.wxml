@@ -1,0 +1,91 @@
+<!--pages/test/test.wxml-->
+<view>
+    <form bindsubmit="Publish">
+      <view class="top">
+        <button class="cancel">取消</button>
+        <text class="reward_get">兼职接单</text>
+        <button class="submit" formType="submit">发布</button>
+      </view>
+      <view class="shadow"></view>
+      <view class="addTitle">
+        <input name="title" class="addtitle" type="text" placeholder="请添加标题"/>
+      </view>
+      <!-- <view class="horizon"></view>  -->
+      <view class="shadow"></view>
+      <text>\n</text>
+      <view class="information">
+        <view class="showcurrentWordNumber">
+          <text class="currentWordNumber">{{currentWordNumber}}/{{max}}</text>
+        </view>
+        <view class="detail">
+          <textarea name="details" maxlength="245" placeholder="（必填）请输入任务的详细内容：任务信息，任务要求等有用信息（温馨提示：不要暴露个人隐私）" bindinput="inputs"></textarea>
+        </view>
+      </view>
+      <view class="shadow"></view>
+      <text>\n</text>
+      
+      <!-- <view class="Address">
+        <image class="image-address" src="https://i.imgtg.com/2022/11/17/t47MC.png"></image>
+        <text class="t-address">填写任务要求：</text>
+        <input name="jobRequirements" class="address" placeholder="（必填）请输入内容" placeholder-class="address-style"/>
+      </view> -->
+      <!-- <view class="horizon"></view>
+      <text>\n</text> -->
+      <view class="endtime">
+        <image class="time" src="https://i.imgtg.com/2022/11/10/tWb7B.png"></image>
+        <text class="t-chosetime">任务开始时间：</text>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bindMultiPickerColumnChange1" value="{{multiIndex}}" range="{{multiArray}}">
+          <input name="startTime" class="chosetime" value='{{starttime}}' placeholder=' （必填）选择时间' placeholder-class="chosetime-style"/>
+        </picker>
+      </view>
+      <view class="horizon"></view>
+      <text>\n</text>
+      
+      <!-- <text>\n</text> -->
+      <view class="endtime">
+        <image class="time" src="https://i.imgtg.com/2022/11/10/tWb7B.png"></image>
+        <text class="t-chosetime">任务截止时间：</text>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange2" bindcolumnchange="bindMultiPickerColumnChange2" value="{{multiIndex}}" range="{{multiArray}}">
+          <input name="endtime" class="chosetime" value='{{endtime}}' placeholder=' （必填）选择时间' placeholder-class="chosetime-style"/>
+        </picker>
+      </view>
+      <view class="horizon"></view>
+      <text>\n</text>
+      <view class="Privacy">
+        <image class="privacy" src="https://i.imgtg.com/2022/11/10/tbqFj.png"></image>
+        <text class="t_privacy">填写您的备注： </text>
+        <input name="remark" class="i-privacy" placeholder="请输入内容" placeholder-class="privacy-style"/>
+      </view>
+      <view class="horizon"></view>
+      <text>\n</text>
+      <view class="Money-reward">
+        <image class="image-money-reward" src="https://i.imgtg.com/2022/11/10/tb5Rp.png"></image>
+        <text class="t-money-reward">填写您的赏金：</text>
+        <input name="money" class="input-money-reward" placeholder="（必填）请输入内容" placeholder-class="money-style"/>
+
+      </view>
+      <view class="horizon"></view>
+      <text>\n</text>
+      <!-- <view class="Phonenumber">
+        <image class="image-phonenumber" src="https://i.imgtg.com/2022/11/10/tbQ3t.png"></image>
+        <text class="t-phonenumber">填写联系方式：</text>
+        <input name="phonenumber" class="phonenumber" placeholder="（必填）只提供给接单人员"
+        placeholder-class="phonenumber-style"/>
+      </view>
+      <view class="horizon"></view>
+      <text>\n</text> -->
+      <view class="Address">
+        <image class="image-address" src="https://i.imgtg.com/2022/11/10/tb2Qr.png"></image>
+        <text class="t-address">填写任务地址：</text>
+        <input name="address" class="address" placeholder="（必填）请输入内容" placeholder-class="address-style"/>
+      </view>
+      <view class="horizon"></view>
+      <text>\n</text>
+      
+      <!-- <view class="addphoto">
+        <l-image-picker count="9"  bind:linchange="onChangeTap" />
+        <text class="t-addphoto" wx:if="{{flag}}" >添加详细照片</text> 
+      </view> -->
+    </form>
+</view>
+

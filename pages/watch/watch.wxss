@@ -1,0 +1,39 @@
+/* pages/watch/watch.wxss */
+.main{
+  width: 100vm;
+  margin: 10rpx auto;
+  display: flex;
+  border-bottom: 4rpx solid pink;
+}
+.swiper{
+  width: 550rpx;
+  height: 550rpx;
+}
+.title{
+  display: flex;
+flex-direction: column;
+justify-content: space-evenly
+}
+.brandtitle{
+color: palevioletred;
+font-weight: bold;
+}
+.pricetitle{
+color: blueviolet;
+font-weight: bold;
+}
+.newpricetitle{
+color: red;
+font-weight: bold;
+}
+.swiper image{
+  display: block;
+  width: 500rpx;
+  height: 500rpx;
+  padding: 20rpx;
+}
+.header{
+  color: gray;
+  text-align: center;
+  margin: 10rpx
+}

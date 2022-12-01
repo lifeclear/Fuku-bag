@@ -1,0 +1,46 @@
+<!-- pages/showgroup/showgroup.wxml -->
+<view class="top">
+  <view class="details">
+    <view class="v_name">
+      <text class="l_name">组名：</text>
+      <text class="name">{{name}}</text>
+    </view>
+    <view class="horizon"></view>
+    <text>\n</text>
+    <view class="v_description">
+      <text class="l_description">描述：</text>
+      <text class="description">{{description}}</text>
+    </view>
+    <text>\n</text>
+    <view>
+      <text class="l_description">邀请码：</text>
+      <text class="description">{{groupId}}</text>
+    </view>
+  </view>
+</view>
+<view class="shadow"></view>
+<text>\n</text>
+<view class="rc">
+  <text class="l_description">晚点名任务</text>
+  <!-- <view bindtap="Addrc" data-id="{{groupId}}" class="arc">
+    <text class="a_rc" style="{{currentIndex==0?'color:#1296DB':''}}" >新建晚点名任务</text>
+  </view> -->
+</view>
+<view bindtap="Roll_call" data-id="{{item.id}}" wx:for="{{roll_call}}" wx:key="*this">
+  <l-card type="primary" plaintext="{{true}}" title="{{item.title}}" l-title-class="title">
+    <view class="content">{{item.description}}</view>
+  </l-card>
+  <!-- <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+      <view class="dialog-title">是否删除</view>
+      <view class="dialog-box">
+          <view bindtap="change"  wx:for="{{areaList}}" wx:key="index"
+          class="dialog-item {{index==indexstatus?'bg-blue':''}}"
+          data-dialogid="{{index}}" bindtap="getValueTap">{{item}}</view>
+          <button bindtap="Delete" data-id="{{item.id}}">是</button>
+          <button bindtap="Returnback">否</button>
+      </view>
+  </view>
+  </view> -->
+</view>

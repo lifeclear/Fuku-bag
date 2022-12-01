@@ -1,0 +1,5 @@
+<!--pages/roll_call/roll_call.wxml-->
+<map id="myMap" style="width: 100%; height: 100vh;"
+longitude="{{longitude}}" latitude="{{latitude}}"
+scale='16' polyline="{{polyline}}" show-location>
+</map>
