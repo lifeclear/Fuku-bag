@@ -11,7 +11,6 @@
         "pages/release/vote/vote",
         "pages/release/shop/shop",
         "pages/release/release/release",
-        "pages/release/goods/goods",
         "pages/release/rewards/rewards",
         "pages/person/person/person",
         "pages/person/addressList/addressList",
@@ -21,7 +20,7 @@
         "pages/person/setting/setting",
         "pages/person/task/task",
         "pages/person/vote/vote",
-        "pages/person/xianzhi/xianzhi"
+        "pages/person/shop/shop"
     ],
     "tabBar": {
         "color": "#000330",

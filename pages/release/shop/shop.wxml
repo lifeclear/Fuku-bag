@@ -1,29 +1,40 @@
-<form bindsubmit="post">
+<form bindsubmit="post" style="display: flex;flex-direction: column;">
 
-  <view class="A1">        <!--第一栏-->
-    <view class="A1-1">     
-      <text class="kk">*</text>     <!--kk：必填*-->
-      <text class="smp">商品名</text>      <!--spm:商品名-->
+  <view class="A1" style="margin-top: 40rpx;">        <!--第一栏-->
+    <text style="color: red;margin-left: 14rpx;margin-right: 20rpx;">*</text>    <text style="min-width: 160rpx;">商品名</text> 
+    <view class="A1-1">    
       <textarea name="Tradename" cols="30" rows="3" placeholder="请输入商品名" class="tradename" value="{{spmc}}"
     maxlength="30"></textarea>      <!--tradename:输入框中的信息-->
     </view>
   </view>
 
   <view class="A2">     <!--第二栏-->
+    <text style="color: red;margin-left: 14rpx;margin-right: 20rpx;">*</text>    <text style="min-width: 160rpx;">商品介绍</text> 
     <view class="A2-1">
-      <text class="kk">*</text>     <!--必填*-->
-      <text class="smp1">详细介绍</text>    <!--smp1:详细介绍-->
       <textarea name="Tradename1" cols="30" rows="3" placeholder="请输入商品详细介绍" class="tradename"
     maxlength="200" value="{{xxjs}}"></textarea>  
     </view>
   </view>
 
   <view class="A3">     <!--第三栏-->
-    <view class="A3-1">
-      <text class="kk">*</text>
-      <text class="A3-2">类型</text>       <!--类型-->
-      <textarea name="Tradename2" cols="30" rows="3" placeholder="类型" class="tradename1" value="{{lx}}"
-      maxlength="10"></textarea>    <!--类型的输入框-->
+
+      <text style="color: red;margin-left: 14rpx;margin-right: 20rpx;">*</text>    <text style="min-width: 200rpx;">类型</text>       <!--类型-->
+
+    <view class="A3-1" style="display: flex;">
+      
+        <view style="display:flex;flex-direction: row;width: 100%;">
+         
+             <view class="container_button" style="display: flex;white-space: pre-wrap;">
+            <!-- <input name="label" class="weui-input " auto-focus placeholder="    添加标签推荐给感兴趣的人吧"/>  -->
+            <!-- 日用，书籍，食品，电器，衣物，其他 -->
+                    <button class="tag_button {{tag=='日用'?'active':''}}" catchtap="onChangeTag"  data-tag="日用">日用</button>
+                    <button class="tag_button {{tag=='书籍'?'active':''}}" catchtap="onChangeTag"  data-tag="书籍">书籍</button>
+                    <button class="tag_button {{tag=='食品'?'active':''}}" catchtap="onChangeTag"  data-tag="食品">食品</button>
+                    <button class="tag_button {{tag=='电器'?'active':''}}" catchtap="onChangeTag"  data-tag="电器">电器</button>
+                    <button class="tag_button {{tag=='衣物'?'active':''}}" catchtap="onChangeTag"  data-tag="衣物">衣物</button>
+                    <button class="tag_button {{tag=='其他'?'active':''}}" catchtap="onChangeTag"  data-tag="其他">其他</button>
+            </view> <!--类型的输入框-->
+        </view>
     </view>
   </view>
 
@@ -59,7 +70,7 @@
       <image src="{{item}}" class="imgss"bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}"/>  <!--上传成功的图片的大小-->
     </view>
     <view class="images" bindtap="upload">  <!--上传图片的框框-->
-      <image src='/image/picture/imageadd.png' class="addbtnimage"/>    <!--添加图片的那张图片的样式-->
+      <image src="https://i.imgtg.com/2022/11/09/tTbdl.png" class="addbtnimage"/>    <!--添加图片的那张图片的样式-->
     </view>
     
   </view>

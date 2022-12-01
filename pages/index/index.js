@@ -1,10 +1,3 @@
-const app = getApp();
-var task_list = app.globalData.List_reward;
-var vote_list = app.globalData.List_vote;
-var goods_list = app.globalData.List_shop;
-console.log("检测来自app数据（悬赏）：",task_list);
-console.log("检测来自app数据（投票）：",vote_list);
-console.log("检测来自app数据（货品）：",goods_list);
 Page({
   data: {
     // 轮播图部分 START
@@ -31,19 +24,38 @@ Page({
 
     // 淘货列表部分开始
     List_goods:{},
+    List:{}
     // 淘货列表部分结束
 },
   onShow(){
       const that = this;
-      //异步获取信息
-      setTimeout(function(){     
-         that.setData({
-             List_reward:app.globalData.List_reward,
-             List_vote:app.globalData.List_vote,
-             List_goods:app.globalData.List_goods,
-    })},350);
-;
-      console.log("check",app.globalData.List_goods,this.data.List_goods);
+      /*悬赏的request START*/
+      wx.request({
+        url:'http://43.142.99.39:99/errand/findPage', //必填，其他的都可以不填
+        data:{  
+          },
+         header:{  
+             'content-type':'application/json',
+             'Access-Token':'1'
+        },
+        method:'post',
+        dataType:'JSON',
+        responseType:'text', 
+        success:function(res){
+              let tmp = JSON.parse(res.data);
+              let records = tmp.item.page.records;
+              that.setData({
+                  List_reward:records
+              })
+              console.log("rewards列表请求成功:",List)
+        },
+        fail:function(res){  
+              console.log(res)
+         },
+        complete:function(){   
+              console.log('rewards complete')   
+         }
+      })
   },
 
 
@@ -54,11 +66,52 @@ Page({
     })
   },
   onChangeIndex:function(event){
+      const that = this;
       console.log(event.currentTarget.dataset.index);
       let index = event.currentTarget.dataset.index;
       this.setData({
           showIndex : index
       })  
+      let url_part = "errand";
+
+      if(index==1)
+        url_part = "vote";
+      else if(index==2)
+        url_part = "idle-goods";
+
+        wx.request({
+            url:'http://43.142.99.39:99/'+url_part+'/findPage', //必填，其他的都可以不填
+            data:{  
+              },
+             header:{  
+                 'content-type':'application/json',
+                 'Access-Token':'1'
+            },
+            method:'post',
+            dataType:'JSON',
+            responseType:'text', 
+            success:function(res){
+                  let tmp = JSON.parse(res.data);
+                  let records = tmp.item.page.records;
+                  if(index==0){
+                    that.setData({ List_reward:records})
+                  }
+                  else if(index==1){
+                    that.setData({ List_vote:records})
+                  }
+                  else if(index==2){
+                    that.setData({ List_goods:records})
+                  }
+
+                  console.log(url_part,"列表请求成功:",that.data.List)
+            },
+            fail:function(res){  
+                  console.log(res)
+             },
+            complete:function(){   
+                  console.log(url_part,' complete')   
+             }
+          })
   }
   ,
   onLoad() {

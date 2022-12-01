@@ -1,0 +1,53 @@
+<view class="Container">
+    <!-- 按钮部分 Start -->
+   <view wx:if="{{show_index==0}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:black;background-color:whitesmoke;" >我发布的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}"  style="color:whitesmoke;background-color:black;border-bottom-left-radius: 25rpx ;">我购入的</view>
+    </view>
+   
+    <view wx:if="{{show_index==1}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:whitesmoke;background-color:black;border-bottom-right-radius: 25rpx ;">我发布的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}" style="color:black;background-color:whitesmoke;">我购入的</view>
+    </view>
+     <!-- 按钮部分 End -->
+
+    <!-- 小按钮部分 Start -->
+    <!-- show_index为0 我发布的，show_index为1 我购入的-->
+    <view wx:if="{{show_index==0}}" class="container_box">
+        <view class="container_choose_button">
+              <view class="choose_button  {{Sent_id=='0'?'active':''}}" bindtap="onChange_Sent_id" data-id="0" data-kind="日用">日用</view>
+              <view class="choose_button  {{Sent_id=='1'?'active':''}}" bindtap="onChange_Sent_id" data-id="1" data-kind="书籍">书籍</view>
+              <view class="choose_button  {{Sent_id=='2'?'active':''}}" bindtap="onChange_Sent_id" data-id="2" data-kind="食品">食品</view>
+              <view class="choose_button  {{Sent_id=='3'?'active':''}}" bindtap="onChange_Sent_id" data-id="3" data-kind="电器">电器</view>
+              <view class="choose_button  {{Sent_id=='4'?'active':''}}" bindtap="onChange_Sent_id" data-id="4" data-kind="衣物">衣物</view>
+              <view class="choose_button  {{Sent_id=='5'?'active':''}}" bindtap="onChange_Sent_id" data-id="5" data-kind="其他">其他</view>
+        </view>
+        <view wx:for="{{List_my_sent_new}}" wx:for-item="{{item}}" wx:for-item="item">
+            <view class="box">
+                <view class="status_show {{item.status==0?'color_onToAddress':item.status==1?'color_onAddressing':'color_onAddressed'}}"></view>
+                {{item.id}}
+                {{item.label}}
+            </view>      
+        </view>
+    </view>
+
+    <view wx:if="{{show_index==1}}" class="container_box">
+        <view class="container_choose_button">
+              <view class="choose_button  {{Ac_id=='0'?'active':''}}" bindtap="onChange_Ac_id" data-id="0" data-kind="日用">日用</view>
+              <view class="choose_button  {{Ac_id=='1'?'active':''}}" bindtap="onChange_Ac_id" data-id="1" data-kind="书籍">书籍</view>
+              <view class="choose_button  {{Ac_id=='2'?'active':''}}" bindtap="onChange_Ac_id" data-id="2" data-kind="食品">食品</view>
+              <view class="choose_button  {{Ac_id=='3'?'active':''}}" bindtap="onChange_Ac_id" data-id="3" data-kind="电器">电器</view>
+              <view class="choose_button  {{Ac_id=='4'?'active':''}}" bindtap="onChange_Ac_id" data-id="4" data-kind="衣物">衣物</view>
+              <view class="choose_button  {{Ac_id=='5'?'active':''}}" bindtap="onChange_Ac_id" data-id="5" data-kind="其他">其他</view>
+        </view>
+        <view wx:for="{{List_my_accept_new}}" wx:for-item="{{item}}" wx:for-item="item">
+            <view class="box">
+                <view class="status_show {{item.status==0?'color_onToAddress':item.status==1?'color_onAddressing':'color_onAddressed'}}"></view>
+                <view class="container_content">     
+                    
+                </view>
+            </view>      
+        </view>
+    </view>
+    <!-- 小按钮部分 End -->
+</view>

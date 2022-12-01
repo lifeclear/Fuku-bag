@@ -30,6 +30,7 @@ App({
     wx.request({
       url:'http://43.142.99.39:99/errand/findPage', //必填，其他的都可以不填
       data:{  
+            
     },
     header:{  
        'content-type':'application/json',
@@ -57,6 +58,7 @@ App({
     wx.request({
     url:'http://43.142.99.39:99/vote/findPage', //必填，其他的都可以不填
     data:{  
+       
   },
   header:{  
      'content-type':'application/json',

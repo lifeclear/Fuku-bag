@@ -1,17 +1,10 @@
 <!--pages/release/release.wxml-->
 <form bindsubmit="Publish">
-<view class="box">
-  <view class="cu-bar bg-white">
-    <view class="action">
-      <button style="width: 50px;" class="cu-btn bg-white round ">取消</button>
-    </view>
-    <view class="content text-bold">
-      发布投票
-    </view>
-    <view class="action">
-    <button  style="width: 50px;" class="cu-btn bg-yellow round " form-type="submit">发布</button></view>
+  <view class="top">
+    <button class="cancel">取消</button>
+    <text class="reward_get">发布投票</text>
+    <button class="submit" formType="submit">发布</button>
   </view>
-</view>
 
 <view id="searchOuterView">
   <view id="searchInnerView">
@@ -26,37 +19,38 @@
 <view>
 <view id="searchOuterView">
   <view id="titleInnerView">
-      <input name="option" class="weui-input " auto-focus placeholder="  选项A"/>   
+      <input name="voteOptionVOListA" data-id="{{voteOptionVOList[index]}}" class="weui-input " auto-focus placeholder="  选项A"/>   
     </view>
     <view id="titleInnerView">
-      <input name="option" class="weui-input " auto-focus placeholder="  选项B"/>  
+      <input name="voteOptionVOListB" class="weui-input " auto-focus placeholder="  选项B"/>  
     </view>
 </view>
 </view>
 <view id="searchOuterView">
-<view class="pictureview">
-<view class="cu-bar bg-white margin-top">
+<!-- <view class="pictureview"> -->
+<!-- <view class="cu-bar bg-white margin-top">
 		<view class="action">
 			图片上传
 		</view>
 		<view class="action">
 			{{imgList.length}}/2
 		</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-4 grid-square flex-sub">
+	</view> -->
+	<!-- <view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub"> -->
 			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+				<image src='{{imgList[index]}}' mode='aspectFill' style="width: 90px;height: 90px;"></image>
+				<!-- <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
 					<text class="cuIcon-close"></text>
-				</view>
+				</view> -->
 			</view>
 			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<2}}">
+        <image style="height: 90px;width: 90px;" src="https://i.imgtg.com/2022/11/09/tTbdl.png"></image>
 				<text class="cuIcon-cameraadd"></text>
 			</view>
-		</view>
-	</view>
-</view>
+		<!-- </view>
+	</view> -->
+<!-- </view> -->
 </view>
 <view id="searchOuterView">
 <view class="tagview">
@@ -64,7 +58,13 @@
   <text class="cuIcon-tagfill text-xl text-gray"></text>
   <text>添加标签</text>
 </view>
-<input name="label" class="weui-input " auto-focus placeholder="    添加标签推荐给感兴趣的人吧"/> 
+<view class="container_button">
+<!-- <input name="label" class="weui-input " auto-focus placeholder="    添加标签推荐给感兴趣的人吧"/>  -->
+    <button class="tag_button {{tag=='生活'?'active':''}}" catchtap="onChangeTag"  data-tag="生活">生活</button>
+    <button class="tag_button {{tag=='情感'?'active':''}}" catchtap="onChangeTag"  data-tag="情感">情感</button>
+    <button class="tag_button {{tag=='学习'?'active':''}}" catchtap="onChangeTag"  data-tag="学习">学习</button>
+    <button class="tag_button {{tag=='其他'?'active':''}}" catchtap="onChangeTag"  data-tag="其他">其他</button>
+</view>
 </view>
 </view>
 </form>

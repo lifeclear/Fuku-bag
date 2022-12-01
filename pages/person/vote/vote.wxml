@@ -1,31 +1,65 @@
-
-
-
-<button type="primary" bindtap="Income" style="position: relative; left: 8rpx; top: 38rpx">我参与的</button>
-<button type="primary" bindtap="Expenditure" style="position: relative; left: 8rpx; top: 38rpx">我发布的</button>
-
-
-
-<view wx:for="{{List_vote}}" wx:for-item="item" >
-    <view wx:if="{{chooseIncome == true}}" style="width: 688rpx; background-color: darkgrey; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: 30rpx">
-        <view class="one">
-            <view class="img">
-                 <image class="yh" src="../setting/1.jpeg" mode=""/>
-            </view>
-             <view class="zhuti" >投票主题:{{item.title}}</view>
-            <view class="xuanze">我的选择：A</view>
-        </view> 
+<view class="Container">
+    <!-- 按钮部分 Start -->
+   <view wx:if="{{show_index==0}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:black;background-color:whitesmoke;" >我发布的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}"  style="color:whitesmoke;background-color:black;border-bottom-left-radius: 25rpx ;">我参与的</view>
     </view>
-</view>
-<view wx:for="{{List_vote}}" wx:for-item="item" >
-<view wx:if="{{chooseExpenditure == true}}" style="width: 688rpx; background-color: darkgrey; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: 30rpx">
-    <view class="one">
-  <view class="img">
-  <image class="yh"  src="../setting/1.jpeg" mode=""/>
-  </view>
-  <view class="zhuti">投票主题:{{item.title}}</view>
-  <view class="xuanze">投票结果：b</view>
-  </view>
- 
-</view>
+   
+    <view wx:if="{{show_index==1}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:whitesmoke;background-color:black;border-bottom-right-radius: 25rpx ;">我发布的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}" style="color:black;background-color:whitesmoke;">我参与的</view>
+    </view>
+     <!-- 按钮部分 End -->
+
+    <!-- 小按钮部分 Start -->
+    <!-- show_index为0 我发布的，show_index为1 我接受的-->
+    <view wx:if="{{show_index==0}}" class="container_box">
+        <view class="container_choose_button">
+              <view class="choose_button  {{Sent_id==0?'active':''}}" bindtap="onChange_Sent_id" data-id="0">生活</view>
+              <view class="choose_button  {{Sent_id==1?'active':''}}" bindtap="onChange_Sent_id" data-id="1">情感</view>
+              <view class="choose_button  {{Sent_id==2?'active':''}}" bindtap="onChange_Sent_id" data-id="2">学习</view>
+              <view class="choose_button  {{Sent_id==3?'active':''}}" bindtap="onChange_Sent_id" data-id="3">其他</view>
+        </view>
+        <view wx:for="{{List_my_sent[Sent_id]}}" wx:for-item="{{item}}" wx:for-item="item">
+            <view class="box">
+                <view class="status_show {{item.status==0?'color_onToAddress':item.status==1?'color_onAddressing':'color_onAddressed'}}"></view>
+                <view class="container_content">
+                    <view class="row">
+                            <view class="title">投票内容📜 :</view>
+                    </view>
+                    <view class="row">
+                         <view class="content">{{item.content}}</view>
+                    </view>
+                </view>
+            </view>      
+        </view>
+    </view>
+
+    <view wx:if="{{show_index==1}}" class="container_box">
+        <view class="container_choose_button">
+              <view class="choose_button {{Ac_id==0?'active':''}}" bindtap="onChange_Ac_id" data-id="0">生活</view>
+              <view class="choose_button {{Ac_id==1?'active':''}}" bindtap="onChange_Ac_id" data-id="1">情感</view>
+              <view class="choose_button {{Ac_id==2?'active':''}}" bindtap="onChange_Ac_id" data-id="2">学习</view>
+              <view class="choose_button {{Ac_id==3?'active':''}}" bindtap="onChange_Ac_id" data-id="3">其他</view>
+        </view>
+        <view wx:for="{{List_my_accept[Ac_id]}}" wx:for-item="{{item}}" wx:for-item="item">
+            <view class="box" style="min-height: 300rpx;">
+                <view class="status_show {{item.status==0?'color_onToAddress':item.status==1?'color_onAddressing':'color_onAddressed'}}"></view>
+                <view class="container_content" >
+                    {{item.voted[0]}}
+                    <view class="row">
+                            <view class="title">投票内容📜 :</view>        
+                    </view>
+                    <view class="content" style="min-height: 100rpx;margin-top: 40rpx;">{{item.content}}</view>
+                    <view class="row" style="margin-top: 30rpx;">
+                        <view class="title">当时选项❤️ :</view>
+                        <view class="content_simple" style="min-width: 40rpx;">{{item.choice}}</view>
+                        <view class="title">参与人数👤 :</view>
+                        <view class="content_simple" style="min-width: 40rpx;">{{item.num}}</view>
+                    </view>
+                </view>
+            </view>      
+        </view>
+    </view>
+    <!-- 小按钮部分 End -->
 </view>

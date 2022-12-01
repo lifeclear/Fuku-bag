@@ -106,7 +106,7 @@ Page({
       },
       goTo6:function(){
         wx.navigateTo({
-          url: '../xianzhi/xianzhi',
+          url: '../shop/shop',
         })
       },
   })

@@ -4,21 +4,30 @@ Page({
   data: {
     index: null,
     imgList: [],
-    voteOptionVOList:[],
+    tag:"其他",
+    num:0,
+    photos:[],
   },
   Publish:function(data){
     console.log(data.detail.value)
     // console.log(data.detail.value.title)
-   // console.log(data.detail.value.endtime)
+    // console.log(data.detail.value.endtime)
     // console.log(data.detail.value.privacy)
     // console.log(data.detail.value.money)
     // console.log(data.detail.value.phonenumber)
     // console.log(data.detail.value.address)
     var title=data.detail.value.title
     var content=data.detail.value.content
-    var option = data.detail.value.option
-    var label=data.detail.value.label
-    var choice = JSON.stringify(option)
+    // var option = data.detail.value.option
+    var photos=this.data.photos
+    var label=this.data.tag
+    var A=data.detail.value.voteOptionVOListA
+    var A2=A.toString()
+    var B=data.detail.value.voteOptionVOListB
+    var B2=B.toString()
+    var voteOptionVOList=[{"choice":"A","description":A2},{"choice":"B","description":B2}]
+    //voteOptionVOList = JSON.stringify(voteOptionVOList)
+    console.log(voteOptionVOList)
     /*if (!content || !deliveryAddress || !rewarded || !endDate || !phone) {
       wx.showToast({
         title: '不能为空！',
@@ -33,10 +42,11 @@ Page({
         content:content, 
         label:label,
         title:title,
-        voteOptionVOList:choice,
+        voteOptionVOList:voteOptionVOList,
+        pictures:photos,
       },
       header:{  
-         'content-type':"application/x-www-form-urlencoded",
+         'content-type': "application/json",
          'Access-Token':'1',
          
       },
@@ -51,7 +61,7 @@ Page({
           duration: 1000//持续的时间
           });
           setTimeout(()=>{wx.reLaunch({
-            url: 'release?id=1'
+            url: 'vote?id=1'
             })
           },600 );
       },
@@ -92,6 +102,26 @@ Page({
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album'], //从相册选择
       success: (res) => {
+        console.log('yes')
+        console.log(res.tempFilePaths)
+        wx.uploadFile({
+          url: 'http://43.142.99.39:99/api/upload',
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          success:(result)=>{
+            var records=JSON.parse(result.data);
+            var filepath=records.item.filePath
+            // console.log(result.data);
+            console.log(filepath);
+            console.log('success');
+            this.setData({
+              photos:this.data.photos.concat(filepath)
+        })
+          },
+          fail(){
+            console.log('fail')
+          }
+        });
         if (this.data.imgList.length != 0) {
           this.setData({
             imgList: this.data.imgList.concat(res.tempFilePaths)
@@ -109,17 +139,17 @@ Page({
       urls: this.data.imgList,
       current: e.currentTarget.dataset.url
     });
-    wx.uploadFile({
-      filePath: this.data.imgList,
-      name: 'photofiles',
-      url: 'http://43.142.99.39:99//api/upload',
-      success(res){
-        console.log(res)
-      },
-      fail(){
-        console.log('fail')
-      }
-    });
+    // wx.uploadFile({
+    //   filePath: this.data.imgList,
+    //   name: 'photofiles',
+    //   url: 'http://43.142.99.39:99//api/upload',
+    //   success(res){
+    //     console.log(res)
+    //   },
+    //   fail(){
+    //     console.log('fail')
+    //   }
+    // });
   },
   DelImg(e) {
     wx.showModal({
@@ -146,6 +176,11 @@ Page({
     this.setData({
       textareaBValue: e.detail.value
     })
+  },
+  onChangeTag:function(event){
+      this.setData({
+          tag:event.currentTarget.dataset.tag
+      })
   }
   
 })

@@ -48,7 +48,7 @@ interval="{{interval}}" duration="{{duration}}">
   <view wx:for="{{List_reward}}" wx:for-item="task">
     <view class="box">
       <view class = "img_box">
-        <image src="../../images/TouXiang.png" class="img"></image>
+        <image src="{{task.avatar}}" class="img"></image>
         <h2 class="user_name">{{task.publisher}}</h2>
         <h3 class="task_money">${{task.rewarded}}</h3>
       </view>
@@ -86,8 +86,11 @@ interval="{{interval}}" duration="{{duration}}">
   <view class="task_list">
       <view class="box vote_box" wx:for="{{List_vote}}" style="overflow: hidden;" wx:for-item="vote" >
           <view class="task_content">
-             <view class="task_info vote_content">
-                  {{vote.content}}
+             <view class="task_info">
+                    <text class="vote_content">
+                        {{vote.content}}
+                    </text>
+         
              </view>
           </view>
           <view class="line" style="height: 2px;"></view>
@@ -96,8 +99,8 @@ interval="{{interval}}" duration="{{duration}}">
       <view class="task_choice">
         <view class="vote_bottom_part" style="display: flex;">
                <view class = "img_box">
-               <image src="../../images/TouXiang.png" class="img" style="margin-left: 30px;"></image>
-                <h2 class="user_name">{{task.publisher}}</h2>
+               <image src="{{vote.avatar}}" class="img" style="margin-left: 100rpx;"></image>
+                <!-- <h2 class="user_name">{{vote.publisher}}</h2> -->
                </view>
                <view class="task_more_info vote_take_more_info" bindtap="onVoteDetail"  data-id="{{task.id}}">
                    more detail

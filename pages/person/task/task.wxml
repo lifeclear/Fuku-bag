@@ -1,28 +1,80 @@
-<button type="primary" bindtap="Income" style="position: relative; left: 8rpx; top: 38rpx">我参与的</button>
-<button type="primary" bindtap="Expenditure" style="position: relative; left: 8rpx; top: 38rpx">我发布的</button>
+<view class="Container">
+    <!-- 按钮部分 Start -->
+   <view wx:if="{{show_index==0}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:black;background-color:whitesmoke;" >我发布的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}"  style="color:whitesmoke;background-color:black;border-bottom-left-radius: 25rpx ;">我接受的</view>
+    </view>
+   
+    <view wx:if="{{show_index==1}}"   class ="container_button">
+            <view class="button" catchtap="onChangeIndex" data-id="{{1}}" style="color:whitesmoke;background-color:black;border-bottom-right-radius: 25rpx ;">我发布的</view>
+            <view class="button" catchtap="onChangeIndex" data-id="{{0}}" style="color:black;background-color:whitesmoke;">我接受的</view>
+    </view>
+     <!-- 按钮部分 End -->
 
-<view  wx:if="{{chooseIncome == true}}" style="width: 688rpx;  background-color: darkgrey; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: 30rpx">
-  <view class="box" wx:for="{{list}}" wx:for-item="item">
-  <button bindtap="onDel" data-id="{{item.id}}">删除</button>
-  <view class="name">{{item.title}}</view>
-  <view class="yaoqiu">任务要求：{{item.content}}</view>
-  <view class="money">￥{{item.reward}}</view>
-  <view class="beizhu">备注:{{item.remark}}</view>
-  <view class="zhuangtai">情况{{item.status}}</view>
+    <!-- 小按钮部分 Start -->
+    <!-- show_index为0 我发布的，show_index为1 我接受的-->
+    <view wx:if="{{show_index==0}}" class="container_box">
+        <view class="container_choose_button">
+              <view class="choose_button  {{Sent_id==0?'active':''}}" bindtap="onChange_Sent_id" data-id="0">所有</view>
+              <view class="choose_button  {{Sent_id==1?'active':''}}" bindtap="onChange_Sent_id" data-id="1">未接单</view>
+              <view class="choose_button  {{Sent_id==2?'active':''}}" bindtap="onChange_Sent_id" data-id="2">已接单</view>
+              <view class="choose_button  {{Sent_id==3?'active':''}}" bindtap="onChange_Sent_id" data-id="3">已解决</view>
+        </view>
+        <view wx:for="{{List_my_sent[Sent_id]}}" wx:for-item="{{item}}" wx:for-item="item">
+            <view class="box">
+                <view class="status_show {{item.status==0?'color_onToAddress':item.status==1?'color_onAddressing':'color_onAddressed'}}"></view>
+                <view class="container_content">
+                    <view class="row">
+                            <view class="title"> 任务内容📜 :</view>
+                            <view class="content">{{item.content}}</view>
+                    </view>
+                    <view class="row">
+                            <view class="title">金额大小💰 :</view>
+                            <view class="content">{{item.rewarded}}</view>
+                    </view>
+                    <view class="row">
+                            <view class="title">联系电话☎️ :</view>
+                            <view class="content">{{item.sponsorPhone}}</view> 
+                    </view>
+                    <view class="row">
+                            <view class="title">截止时间⌚️ :</view>
+                            <view class="content">{{item.endDate}}</view>
+                    </view>
+                </view>
+            </view>      
+        </view>
+    </view>
 
-  </view>
-</view>
-
-
-<view wx:if="{{chooseExpenditure == true}}" style="width: 688rpx; background-color: darkgrey; display: block; box-sizing: border-box; position: relative; left: 32rpx; top: 30rpx">
-    <view class="box" wx:for="{{list}}" wx:for-item="item">
-        <button bindtap="onDel" data-id="{{item.id}}">删除</button>
-  <view class="name">{{item.title}}</view>
-  <view class="yaoqiu">任务要求：{{item.content}}</view>
-  <view class="money">￥{{item.reward}}</view>
-  <view class="beizhu">备注:{{item.remark}}</view>
-  <view class="zhuangtai">情况{{item.status}}</view>
-
-  </view>
-
+    <view wx:if="{{show_index==1}}" class="container_box">
+        <view class="container_choose_button">
+              <view class="choose_button {{Ac_id==0?'active':''}}" bindtap="onChange_Ac_id" data-id="0">所有</view>
+              <view class="choose_button {{Ac_id==1?'active':''}}" bindtap="onChange_Ac_id" data-id="1">未接单</view>
+              <view class="choose_button {{Ac_id==2?'active':''}}" bindtap="onChange_Ac_id" data-id="2">已接单</view>
+              <view class="choose_button {{Ac_id==3?'active':''}}" bindtap="onChange_Ac_id" data-id="3">已解决</view>
+        </view>
+        <view wx:for="{{List_my_accept[Ac_id]}}" wx:for-item="{{item}}" wx:for-item="item">
+            <view class="box">
+                <view class="status_show {{item.status==0?'color_onToAddress':item.status==1?'color_onAddressing':'color_onAddressed'}}"></view>
+                <view class="container_content">
+                    <view class="row">
+                            <view class="title"> 任务内容📜 :</view>
+                            <view class="content">{{item.content}}</view>
+                    </view>
+                    <view class="row">
+                            <view class="title">金额大小💰 :</view>
+                            <view class="content">{{item.rewarded}}</view>
+                    </view>
+                    <view class="row">
+                            <view class="title">联系电话☎️ :</view>
+                            <view class="content">{{item.sponsorPhone}}</view> 
+                    </view>
+                    <view class="row">
+                            <view class="title">截止时间⌚️ :</view>
+                            <view class="content">{{item.endDate}}</view>
+                    </view>
+                </view>
+            </view>      
+        </view>
+    </view>
+    <!-- 小按钮部分 End -->
 </view>

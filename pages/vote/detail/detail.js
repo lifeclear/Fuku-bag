@@ -407,7 +407,7 @@ Page({
       if(that.data.editTrue == false){
         that.setData({
           editTrue: true,
-editTextA: '已投票',
+          editTextA: '已投票',
         })
       }
       // else{

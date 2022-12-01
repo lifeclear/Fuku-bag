@@ -23,6 +23,8 @@ page{
   line-height: 52rpx;
   /*设置边框包含在宽高之内*/
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
 }
 #searchInnerView > image{
   /* 给图片设置宽和高 */
@@ -60,7 +62,6 @@ page{
   margin: 10px ;
 
   height:35px;
-  width:80px;
   /*设置边框圆角*/
   border-radius: 10rpx;
 }
@@ -124,4 +125,50 @@ page{
   line-height: 52rpx;
   /*设置边框包含在宽高之内*/
   box-sizing: border-box;
+}
+
+.container_button{
+    display: flex;
+    flex-direction: row;
+}
+
+.active{
+    background-color: #f8ae68;
+}
+button::after{ 
+	border: none; 
+}
+button {
+  width: 140rpx;
+  height: 50rpx;
+  border-radius: 20rpx;
+  font-size: 18px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit{
+  background-color: rgb(235, 191, 111);
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.reward_get{
+  font-size: large;
+  font-weight: bold;
+}
+.cu-form-group{
+  display: flex;
+  flex-direction: row;
+}
+.bg-img{
+  display: flex;
+  flex-direction: row;
+}
+.solids{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
 }

@@ -13,36 +13,30 @@
    
     <view class="Mine">
         <view bindtap="goTo1" class="Trans">
-            <view>我的任务</view>
-            <image  class="Instru" src="tishi.png" style="position: relative; left: 530rpx; top: 0rpx">
-            </image>
+            <view style="font-size: 30rpx;line-height: 30rpx;min-width: 600rpx;margin-top: 12rpx;">我的任务</view>
+            <image src="tishi.png" style="width: 50rpx;height: 50rpx;"></image>
         </view>
         <view bindtap="goTo2" class="Trans">
-            <view>我的投票</view>
-           
-            <image  class="Instru" src="tishi.png" style="position: relative; left: 530rpx; top: 0rpx"></image>
+            <view style="font-size: 30rpx;line-height: 30rpx;min-width: 600rpx;margin-top: 12rpx;">我的投票</view>
+            <image src="tishi.png" style="width: 50rpx;height: 50rpx;"></image>
         </view>
 
         <view bindtap="goTo6" class="Trans">
-            <view>我的闲置</view>
-    
-            <image  class="Instru" src="tishi.png" style="position: relative; left: 495rpx; top: 0rpx"></image>
+            <view style="font-size: 30rpx;line-height: 30rpx;min-width: 600rpx;margin-top: 12rpx;">我的闲置</view>
+            <image src="tishi.png" style="width: 50rpx;height: 50rpx;"></image>
         </view>
 
         <view bindtap="goTo3" class="Trans">
-            <view>消息</view>
-           
-            <image  class="Instru" src="tishi.png" style="position: relative; left: 595rpx; top: 0rpx"></image>
+            <view style="font-size: 30rpx;line-height: 30rpx;min-width: 600rpx;margin-top: 12rpx;">消息</view>
+            <image src="tishi.png" style="width: 50rpx;height: 50rpx;"></image>
         </view>
         <view bindtap="goTo4" class="Trans">
-            <view>个人设置</view>
-            
-            <image  class="Instru" src="tishi.png" style="position: relative; left: 530rpx; top: 0rpx"></image>
+            <view style="font-size: 30rpx;line-height: 30rpx;min-width: 600rpx;margin-top: 12rpx;">个人设置</view>
+            <image src="tishi.png" style="width: 50rpx;height: 50rpx;"></image>
         </view>
-        <view bindtap="goTo5" class="Trans">
-            <view>帮助与反馈</view>
-    
-            <image  class="Instru" src="tishi.png" style="position: relative; left: 495rpx; top: 0rpx"></image>
+        <view bindtap="goTo5" class="Trans" >
+            <view style="font-size: 30rpx;line-height: 30rpx;min-width: 600rpx;margin-top: 12rpx;">帮助与反馈</view>
+            <image src="tishi.png" style="width: 50rpx;height: 50rpx;"></image>
         </view>
         
     </view>
