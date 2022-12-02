@@ -119,6 +119,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/face-recognition/face-recognition",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

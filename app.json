@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/maplocation/maolocation",
     "pages/index/index",
     "pages/logs/logs",
@@ -11,13 +12,13 @@
     "pages/showgroup/showgroup",
     "pages/addgroup/addgroup",
     "pages/join-group/join-group",
-    "pages/my/my",
     "pages/roll_call_details/roll_call_details",
     "pages/add_roll_call/add_roll_call",
     "pages/goods/goods",
     "pages/shop/shop",
     "pages/roll_call/roll_call",
-    "pages/showgroup_joined/showgroup_joined"
+    "pages/showgroup_joined/showgroup_joined",
+    "pages/face-recognition/face-recognition"
   ],
   "plugins": {
     "routePlan": {

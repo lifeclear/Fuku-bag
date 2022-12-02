@@ -42,8 +42,8 @@ Page({
       {
           pagePath:"/pages/roll_call/roll_call",
           text:"签到",
-          iconPath:"https://bpic.588ku.com/element_origin_min_pic/19/06/15/2a9dd71d95569f7d80c4a2a644fcf7b9.jpg",
-          selectedIconPath:"https://bpic.588ku.com/element_origin_min_pic/19/06/15/2a9dd71d95569f7d80c4a2a644fcf7b9.jpg"
+          iconPath:"https://img.51miz.com/Element/00/18/66/56/165b1c5f_E186656_0d203fad.png",
+          selectedIconPath:"https://img.51miz.com/Element/00/18/66/56/165b1c5f_E186656_0d203fad.png"
       }]
   },
 
@@ -95,30 +95,24 @@ Page({
         }
       })
       wx.request({
-        url: 'https://www.web4j.top/group-user/getUsersByGroupId/'+groupId,
+        url: 'https://www.web4j.top/attendance-task-user/findPage',
         data:{
-  
+          taskId:id
         },
-        method:'GET',
+        method:'POST',
         header:{
           'content-type':'application/json',
           'Access-Token':token
         },
         success(res){
-          // var attendanceTask=res.data.item.attendanceTask
-          // console.log(res.data.item.attendanceTask)
+          var records=res.data.item.page.records
+          console.log(records)
+          // var users=res.data.item.users
+          // console.log(users)
           // that.setData({
-          //   name:attendanceTask.title,
-          //   description:attendanceTask.description,
-          //   startTime:attendanceTask.startTime,
-          //   endTime:attendanceTask.endTime
+          //   AllStudent:records
           // })
-          // console.log(res)
-          var users=res.data.item.users
-          console.log(users)
-          that.setData({
-            AllStudent:users
-          })
+
         },
         fail(){
           console.log('fail')
@@ -163,11 +157,11 @@ Page({
           }
         })
         wx.request({
-          url: 'https://www.web4j.top/group-user/getUsersByGroupId/'+groupId,
+          url: 'https://www.web4j.top/attendance-task-user/findPage',
           data:{
-    
+            taskId:id
           },
-          method:'GET',
+          method:'POST',
           header:{
             'content-type':'application/json',
             'Access-Token':token

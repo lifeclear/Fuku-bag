@@ -1,3 +1,4 @@
+var app=getApp();
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
  
 // 实例化API核心类
@@ -7,6 +8,7 @@ var qqmapsdk = new QQMapWX({
  
 Page({
   data:{
+    token:"",
     //默认经纬度
     distance:[],
     name: '',
@@ -17,22 +19,102 @@ Page({
     longitude_t:'',
   },
   onShow(e){
-    var that=this
-    wx.getLocation({
-      type:"gcj02",
-      // altitude: 'altitude',
-      success(res){
-        console.log(res)
-        that.setData({
-          latitude:res.latitude,
-          longitude:res.longitude,
+    //此时需要判断全局数据是否获取到
+	  var that=this
+	  //如果已经获取到，则直接使用
+	  if(app.globalData.Token){
+      // console.log(app.globalData.Token)
+		  //如果此处的逻辑较多可以提炼为一个函数
+		  that.setData({
+			  token:app.globalData.Token
+      })
+      var token=app.globalData.Token
+      wx.getLocation({
+        type:"gcj02",
+        // altitude: 'altitude',
+        success(res){
+          console.log(res)
+          that.setData({
+            latitude:res.latitude,
+            longitude:res.longitude,
+          })
+          wx.request({
+            url: 'https://www.web4j.top/location/compareLocation',
+            data:{
+              latitude:res.latitude,
+              longitude:res.longitude
+            },
+            header:{
+              'content-type':'application/json',
+              'Access-Token':token
+            },
+            method:"POST",
+            success(res){
+              console.log(res)
+            },
+            fail(){
+              console.log('fail')
+            }
+          })
+        },
+        fail(){
+          console.log('fail');
+        }
+      })
+	  }else{
+	  //如果还未请求到数据，则创建一个回调函数，等待数据获取完成后调用
+		  app.userInfoCallback = res => {
+			  that.setData({
+			  	token:app.globalData.Token
         })
-        // wx.openLocation({
-        //   latitude: res.latitude,
-        //   longitude: res.longitude,
-        //   // name:"长沙理工大学",
-        //   scale: 18
-        // })
+        // console.log(that.data.token)
+        var token=app.globalData.Token
+        wx.getLocation({
+          type:"gcj02",
+          // altitude: 'altitude',
+          success(res){
+            console.log(res)
+            that.setData({
+              latitude:res.latitude,
+              longitude:res.longitude,
+            })
+            wx.request({
+              url: 'https://www.web4j.top/location/compareLocation',
+              data:{
+                latitude:res.latitude,
+                longitude:res.longitude
+              },
+              header:{
+                'content-type':'application/json',
+                'Access-Token':token
+              },
+              method:"POST",
+              success(res){
+                console.log(res)
+              },
+              fail(){
+                console.log('fail')
+              }
+            })
+          },
+          fail(){
+            console.log('fail');
+          }
+        })
+		  }
+	  }
+    
+    wx.showModal({
+      title: '签到',
+      content: '是否在签到范围内',
+      success (res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../face-recognition/face-recognition',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
   },

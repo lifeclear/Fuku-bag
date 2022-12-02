@@ -1,0 +1,10 @@
+<!--pages/face-recognition/face-recognition.wxml-->
+<view>
+  <view class="camera">
+    <image  wx:if="{{flag_c==0}}" class="whitephoto" src="{{src}}"/>
+    <camera class="camera_c" wx:if="{{flag_c==1}}" device-position="front" flash="on"></camera>
+  </view>
+  <button wx:if="{{flag_f==1}}" bindtap="showcamera" type="primary" >开始人脸识别</button>
+  <button wx:if="{{flag_s==1}}" bindtap="takePhoto" type="primary" >确定</button>
+</view>
+<!-- <image src="{{src}}"/> -->
