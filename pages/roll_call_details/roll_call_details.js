@@ -107,12 +107,25 @@ Page({
         success(res){
           var records=res.data.item.page.records
           console.log(records)
-          // var users=res.data.item.users
-          // console.log(users)
-          // that.setData({
-          //   AllStudent:records
-          // })
-
+          console.log(records.length)
+          for(var i=0;i<records.length;i++){
+            // that.setData({
+            //   AllStudent:records
+            // })
+            if(records[i].status=='0'){
+              that.setData({
+                AllStudent:that.data.AllStudent.concat(records[i].name),
+                not_yet_Student:that.data.not_yet_Student.concat(records[i].name)
+              })
+            }
+            else{
+              that.setData({
+                AllStudent:that.data.AllStudent.concat(records[i].name),
+                Already_Student:that.data.Already_Student.concat(records[i].name)
+              })
+            }
+          }
+          console.log(that.data.not_yet_Student)
         },
         fail(){
           console.log('fail')
@@ -167,15 +180,27 @@ Page({
             'Access-Token':token
           },
           success(res){
-            // var attendanceTask=res.data.item.attendanceTask
-            // console.log(res.data.item.attendanceTask)
+            var records=res.data.item.page.records
+            console.log(records)
+            console.log(records.length)
+            for(var i=0;i<records.length;i++){
             // that.setData({
-            //   name:attendanceTask.title,
-            //   description:attendanceTask.description,
-            //   startTime:attendanceTask.startTime,
-            //   endTime:attendanceTask.endTime
+            //   AllStudent:records
             // })
-            console.log(res)
+              if(records[i].status=='0'){
+                that.setData({
+                  AllStudent:that.data.AllStudent.concat(records[i].name),
+                  not_yet_Student:that.data.not_yet_Student.concat(records[i].name)
+                })
+              }
+              else{
+                that.setData({
+                  AllStudent:that.data.AllStudent.concat(records[i].name),
+                  Already_Student:that.data.Already_Student.concat(records[i].name)
+                })
+              }
+            }
+            console.log(not_yet_Student)
           },
           fail(){
             console.log('fail')

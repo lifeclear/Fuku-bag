@@ -34,13 +34,13 @@
   </l-tabpanel>
   <l-tabpanel tab="已签到" key="two" slot="two">
     <view wx:for="{{Already_Student}}" wx:key="*this" class="tab-content">
-      <l-card  type="primary" plaintext="{{true}}" title="{{item.name}}">
+      <l-card  type="primary" plaintext="{{true}}" title="{{item}}">
       </l-card>
     </view>
   </l-tabpanel>
   <l-tabpanel tab="未签到" key="three" slot="three">
     <view wx:for="{{not_yet_Student}}" wx:key="*this" class="tab-content">
-      <l-card  type="primary" plaintext="{{true}}" title="{{item.name}}">
+      <l-card  type="primary" plaintext="{{true}}" title="{{item}}">
       </l-card>
     </view>
   </l-tabpanel>
